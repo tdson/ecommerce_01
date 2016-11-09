@@ -18,9 +18,11 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "carrierwave",             "0.11.2"
 gem "mini_magick",             "4.5.1"
 gem "jquery-datatables-rails", "~> 3.4"
+gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "omniauth-twitter"
+gem "google-api-client"
 gem "devise", "4.2.0"
 
 group :development, :test do
