@@ -24,6 +24,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-twitter"
 gem "google-api-client"
 gem "devise", "4.2.0"
+gem "figaro"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"
