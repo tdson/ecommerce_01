@@ -1,2 +1,18 @@
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      base_title: "FraMarket"
+    header:
+      logo_alt: "FraMarket"
+      link_home: "Home"
+      empty_cart: "Empty Cart"
+      items: "Items"
+      sign_in: "Sign In"
+      sign_up: "Sign Up"
+    footer:
+      copyright: "2016. Design and Developed by"
+      author_name: "Son Tran & Nhat Doan"
+    shared:
+      error_messages:
+        message: "The form contains"
+        error: "error"
