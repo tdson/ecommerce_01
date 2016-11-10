@@ -1,0 +1,55 @@
+<div class="top_bg" id="home">
+  <div class="container">
+    <div class="header_top">
+      <div class="top_right"></div>
+      <div class="top_left">
+        <ul>
+          <li>
+            <%= link_to t("sign_in"), "#" %>
+          </li>
+          <li>
+            <%=link_to t("sign_up"), "#"%>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<div class="header_bg">
+  <div class="container">
+    <div class="header">
+      <div class="head-t">
+        <div class="logo">
+          <%= link_to image_tag("project2_logo.png", alt: t(".logo_alt")) %>
+        </div>
+        <div class="header_right">
+          <div class="cart box_1">
+            <%= link_to "#" do %>
+              <div class="total">
+                <span class="simpleCart_total"></span>
+                <span id="simpleCart_quantity" class="simpleCart_quantity" ></span>
+                <%= t ".items" %>
+              </div>
+              <i class="glyphicon glyphicon-shopping-cart"></i>
+            <% end %>
+            <p>
+              <%= link_to t(".empty_cart"), "#", class: "simpleCart_empty" %>
+            </p>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <ul class="megamenu skyblue">
+        <li class="active grid">
+          <%= link_to t(".link_home"), "#", class: "color1" %>
+        </li>
+        <li class="grid">
+          <%= link_to "", "", class: "color2" %>
+          <div class="megapanel"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
