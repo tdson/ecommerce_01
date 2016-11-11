@@ -3,3 +3,9 @@ female_gender: false
 avatar_default: "default_avatar.png"
 avatar_medium: 160
 resize_avatar: 500
+product_default: "default_production.png"
+fb_sharer: "https://www.facebook.com/sharer/sharer.php?u="
+class_default: "default"
+class_danger: "danger"
+minimum_qty: 1
+empty_cart: 0

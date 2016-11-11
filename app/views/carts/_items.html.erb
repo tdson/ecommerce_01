@@ -1,0 +1,15 @@
+<% @products.each do |product, qty| %>
+  <% if product %>
+    <tr>
+      <td><%= link_to product.name, product %></td>
+      <td><%= qty %></td>
+      <td><%= product.price %></td>
+      <td>
+        <%= link_to remove_cart_item_path(product.id), method: :delete do %>
+          <i class="fa fa-trash"></i>
+          <%= t "carts.index.link_rm" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+<% end %>

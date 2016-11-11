@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <div class="col-md-8 col-md-offset-4">
+    <div class="col-sm-12">
+      <ul class="breadcrumb">
+        <li><%= link_to t("breadcrumb.home"), root_path %></li>
+        <li><%= link_to @product.category.name, @product.category %></li>
+        <li><%= @product.name %></li>
+      </ul>
+    </div>
+    <section>
+      <div class="col-md-4">
+        <div class="product-image">
+          <%= image_tag @product.image_path %>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="product-details">
+          <h2><%= @product.name %></h2>
+          <div class="social-btns">
+            <div class="fb-like"
+              data-href="<%= product_url @product %>"
+              data-layout="button_count" data-action="like" data-size="small"
+              data-show-faces="true" data-share="false"></div>
+            <%= social_share_button_tag @product.name %>
+          </div>
+          <div class="description">
+            <%= @product.description %>
+          </div>
+          <div class="price">
+            <strong><%= t ".price" %></strong>
+            <span class="price-number">
+              <%= @product.price %>
+            </span>
+            <%= t ".currency" %>
+          </div>
+          <div class="status">
+            <strong><%= t ".status" %></strong>
+            <span class="label label-<%= status_class @product %>">
+              <%= get_product_status @product %>
+            </span>
+          </div>
+          <div class="quantity_box">
+            <strong>
+              <span><%= t ".quantity" %></span>
+            </strong>
+            <div class="product-qty">
+              <%= form_tag add_to_cart_path, id: "form-add-to-cart",
+                remote: true do %>
+                <%= hidden_field_tag :product_id, @product.id %>
+                <%= number_field_tag :quantity, 1, min: 1,
+                  class: "form-control", id: "field-qty" %>
+                <%= button_tag type: :submit,
+                  class: "form-control btn btn-primary", id: "btn-add-cart" do %>
+                  <i class="fa fa-cart-plus"></i>
+                  <%= t ".btn_add_cart" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="col-md-12" id="comment-sction">
+      <div id="fb-root"></div>
+      <div class="fb-comments"
+        data-href="<%= product_url @product %>"
+        data-width="700" data-numposts="5"></div>
+    </div>
+  </div>
+</div>

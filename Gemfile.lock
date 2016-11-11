@@ -311,6 +311,9 @@ GEM
       jwt (~> 1.5)
       multi_json (~> 1.10)
     slop (3.6.0)
+    social-share-button (0.8.4)
+      coffee-rails
+      sass-rails
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -389,6 +392,7 @@ DEPENDENCIES
   rails-assets-jquery-sparkline!
   rails-controller-testing (= 0.1.1)
   sass-rails (= 5.0.6)
+  social-share-button
   spring (= 1.7.2)
   spring-watcher-listen (= 2.0.0)
   turbolinks (= 5.0.1)
