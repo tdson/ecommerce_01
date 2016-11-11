@@ -45,10 +45,12 @@
         <li class="active grid">
           <%= link_to t(".link_home"), "#", class: "color1" %>
         </li>
+        <% @categories.each do |category| %>
         <li class="grid">
-          <%= link_to "", "", class: "color2" %>
+          <%= link_to category.name, "", class: "color2" %>
           <div class="megapanel"></div>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
