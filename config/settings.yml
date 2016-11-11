@@ -1,3 +1,6 @@
 male_gender: true
 female_gender: false
 products_per_page: 9
+avatar_default: "default_avatar.png"
+avatar_medium: 160
+resize_avatar: 500

@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery.easing
+//= require_tree .
+//= require admin_lte/admin_lte

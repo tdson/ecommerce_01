@@ -24,3 +24,28 @@ en:
       error_messages:
         message: "The form contains"
         error: "error"
+    admin:
+      base_title: "Dashboard ECommerce"
+      role_0: "Admin"
+      role_1: "Mod"
+      role_2: "Member"
+      footer:
+        copyright: "Developed by Son Tran and Chi Nhat"
+      header:
+        logo_lg: "Admin ECommerce"
+        logo_sm: "ECom"
+        toggle_navigation: "Toggle navigation"
+        link_sign_out: "Sign out"
+      left_sidebar:
+        main_nav: "main navigation"
+        nav_orders: "Orders"
+        item_pending: "Pending"
+        item_cancel: "Canceled"
+        item_done: "Done"
+        nav_products: "Products"
+        p_index: "Index"
+        p_import: "Add/Import"
+        nav_categories: "Categories"
+        nav_statistics: "Statistics"
+        nav_users: "Users"
+        nav_requests: "Requests"
