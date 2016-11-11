@@ -1,2 +1,5 @@
 en:
   hello: "Hello world"
+  products:
+    index:
+      link_sign_out: "Sign out"

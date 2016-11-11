@@ -1,0 +1,6 @@
+<p><%= t ".header", email: @email %></p>
+
+<p><%= t ".instruction" %></p>
+
+<p><%= link_to t(".link_confirm"),
+  confirmation_url(@resource, confirmation_token: @token) %></p>
