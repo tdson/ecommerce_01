@@ -1,0 +1,85 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <div class="user-panel">
+      <div class="pull-left image">
+        <%= image_tag current_user.avatar, class: "img-circle" %>
+      </div>
+      <div class="pull-left info">
+        <p><%= current_user.name %></p>
+        <i class="fa fa-circle text-success"></i> <%= get_role current_user %>
+      </div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="header"><%= t(".main_nav").upcase %></li>
+      <li class="treeview">
+        <%= link_to "#" do %>
+          <i class="fa fa-files-o"></i> <span><%= t ".nav_orders" %></span>
+          <span class="pull-right-container">
+            <span class="label label-primary pull-right"></span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        <% end %>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-circle-o"></i><%= t ".item_pending" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-circle-o"></i><%= t ".item_done" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-circle-o"></i><%= t ".item_cancel" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <%= link_to "#" do %>
+          <i class="fa fa-product-hunt"></i>
+          <span><%= t ".nav_products" %></span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        <% end %>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-circle-o"></i><%= t ".p_index" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-circle-o"></i><%= t ".p_import" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <i class="fa fa-inbox"></i>
+          <span><%= t ".nav_categories" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <i class="fa fa-bar-chart-o"></i>
+          <span><%= t ".nav_statistics" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <i class="fa fa-users"></i> <span><%= t ".nav_users" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <i class="fa fa-book"></i> <span><%= t ".nav_requests" %></span>
+        <% end %>
+      </li>
+    </ul>
+  </section>
+</aside>

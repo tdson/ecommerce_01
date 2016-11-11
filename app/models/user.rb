@@ -3,6 +3,8 @@ class User < ApplicationRecord
     :trackable, :confirmable, :omniauthable,
     omniauth_providers: [:facebook, :google_oauth2, :twitter]
 
+  mount_uploader :avatar, ImageUploader
+
   has_many :orders, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :ratings, dependent: :destroy

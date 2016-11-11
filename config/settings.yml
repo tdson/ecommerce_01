@@ -1,2 +1,5 @@
 male_gender: true
 female_gender: false
+avatar_default: "default_avatar.png"
+avatar_medium: 160
+resize_avatar: 500
