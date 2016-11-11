@@ -1,2 +1,3 @@
 male_gender: true
 female_gender: false
+products_per_page: 9
