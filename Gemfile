@@ -24,6 +24,20 @@ gem "omniauth-google-oauth2"
 gem "omniauth-twitter"
 gem "google-api-client"
 gem "devise", "4.2.0"
+gem "flexslider", "2.2.0"
+gem "jscrollpane-rails", "2.0.23"
+gem "jquery-easing-rails", "0.0.2"
+gem "figaro"
+source "https://rails-assets.org" do
+  gem "rails-assets-bootstrap-rtl"
+  gem "rails-assets-jquery-knob"
+  gem "rails-assets-bootstrap-daterangepicker"
+  gem "rails-assets-jquery-sparkline"
+  gem "rails-assets-jquery-icheck"
+  gem "rails-assets-admin-lte"
+end
+gem "admin_lte-rails"
+gem "social-share-button"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"

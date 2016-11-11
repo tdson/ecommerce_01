@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require flexslider.css
+ *= require admin_lte/ltr/admin_lte
+ *= require social-share-button
  */

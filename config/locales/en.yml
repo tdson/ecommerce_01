@@ -1,2 +1,76 @@
 en:
-  hello: "Hello world"
+  breadcrumb:
+    home: "Home"
+    cart: "Shopping cart"
+  layouts:
+    application:
+      base_title: "FraMarket"
+    header:
+      logo_alt: "FraMarket"
+      link_home: "Home"
+      sign_in: "Sign In"
+      sign_up: "Sign Up"
+    cart:
+      empty: "Empty"
+      items: "item"
+      cart: "Shopping Cart"
+    footer:
+      copyright: "2016. Design and Developed by"
+      author_name: "Son Tran & Nhat Doan"
+    shared:
+      error_messages:
+        message: "The form contains"
+        error: "error"
+  products:
+    load_fails: "Product not found!"
+    out: "Sold out"
+    available: "Avalable"
+    index:
+      link_sign_out: "Sign out"
+    show:
+      price: "Price:"
+      currency: "VND"
+      status: "Status:"
+      quantity: "Quantity:"
+      btn_add_cart: "add to cart"
+      btn_share: "Share"
+  carts:
+    sold_out: "Sorry, but this product is sold out!"
+    not_enough: "Sorry, there are only %{qty} remaining."
+    added: "Successfully added."
+    index:
+      lb_product: "Product"
+      lb_price: "Price"
+      lb_qty: "Quantity"
+      options: "Options"
+      total: "Total:"
+      currency: "VND"
+      link_rm: "Remove"
+      btn_cancel: "Clear all"
+      btn_proceed: "Proceed to checkout"
+  admin:
+    base_title: "Dashboard ECommerce"
+    role_0: "Admin"
+    role_1: "Mod"
+    role_2: "Member"
+    layouts:
+      footer:
+        copyright: "Developed by Son Tran and Chi Nhat"
+      header:
+        logo_lg: "Admin ECommerce"
+        logo_sm: "ECom"
+        toggle_navigation: "Toggle navigation"
+        link_sign_out: "Sign out"
+      left_sidebar:
+        main_nav: "main navigation"
+        nav_orders: "Orders"
+        item_pending: "Pending"
+        item_cancel: "Canceled"
+        item_done: "Done"
+        nav_products: "Products"
+        p_index: "Index"
+        p_import: "Add/Import"
+        nav_categories: "Categories"
+        nav_statistics: "Statistics"
+        nav_users: "Users"
+        nav_requests: "Requests"

@@ -6,6 +6,9 @@ en:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      new:
+        header: "Resend confirmation instructions"
+        btn_submit: "Resend confirmation instructions"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -19,12 +22,26 @@ en:
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
+        header: "Welcome %{email}!"
+        instruction: "You can confirm your account email through the link below:"
+        link_confirm: "Confirm my account"
       reset_password_instructions:
         subject: "Reset password instructions"
+        header: "Hi %{email}!"
+        link_change: "Change my password"
+        p1: "Someone has requested a link to change your password. You can do this through the link below."
+        p2: "If you didn't request this, please ignore this email."
+        p3: "Your password won't change until you access the link above and create a new one."
       unlock_instructions:
         subject: "Unlock instructions"
+        header: "Hi %{email}!"
+        p1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        p2: "Click the link below to unlock your account:"
+        link_unlock: "Unlock my account"
       password_change:
         subject: "Password Changed"
+        header: "Hello %{email}!"
+        msg: "We're contacting you to notify you that your password has been changed."
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -34,6 +51,15 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      new:
+        header: "Forgot your password?"
+        btn_submit: "Send me reset password instructions"
+      edit:
+        header: "Change your password"
+        lb_new_pass: "New password"
+        lb_pass_conf: "Confirm new password"
+        msg_length_min: "(%{number} characters minimum)"
+        btn_submit: "Change my password"
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -42,14 +68,44 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
+      edit:
+        header: "Edit %{resource}"
+        msg_1: "Currently waiting confirmation for:"
+        pass_tool_tip: "(leave blank if you don't want to change it)"
+        msg_length_min: "(%{number} characters minimum)"
+        curr_pass_tool_tip: "(we need your current password to confirm your changes)"
+        btn_submit: "Update"
+        header_2: "Cancel my account"
+        link_cancel: "Cancel my account"
+        msg: "Unhappy?"
+        msg_conf: "Are you sure?"
+        link_back: "Back"
+      new:
+        header: "Sign up"
+        msg_length_min: "(%{number} characters minimum)"
+        btn_submit: "Sign up"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        header: "Log in"
+        btn_submit: "Log in"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      new:
+        header: "Resend unlock instructions"
+        btn_submit: "Resend unlock instructions"
+    shared:
+      links:
+        link_login: "Log in"
+        link_signup: "Sign up"
+        link_reset: "Forgot your password?"
+        link_resend_conf: "Didn't receive confirmation instructions?"
+        link_resend_unlock: "Didn't receive unlock instructions?"
+        btn_social: "Sign in with %{provider}"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

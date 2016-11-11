@@ -220,7 +220,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It"s turned off by default because it"s slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it"s the first
   # devise role declared in your routes (usually :user).
@@ -272,10 +272,11 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
-  config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"],
-    scope: "email,public_profile,user_birthday"
+  config.omniauth :facebook, "1159750564103622", "ab5d6e55f9b5601c6a8bb85f79e6f282",
+    scope: "email, public_profile"
   config.omniauth :google_oauth2, ENV["GOOGLE_OAUTH2_APP_ID"],
     ENV["GOOGLE_OAUTH2_APP_SECRET"],
-    scope: "email,profile,offline", prompt: "consent"
-  config.omniauth :twitter, ENV["TWITTER_APP_ID"], ENV["TWITTER_APP_SECRET"]
+    scope: "email, profile", prompt: "consent"
+  config.omniauth :twitter, ENV["TWITTER_APP_ID"], ENV["TWITTER_APP_SECRET"],
+    scope: "name"
 end

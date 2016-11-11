@@ -1,0 +1,22 @@
+<header class="main-header">
+  <%= link_to root_url, class: "logo" do %>
+    <span class="logo-mini"><%= t ".logo_sm" %></span>
+    <span class="logo-lg"><%= t ".logo_lg" %></span>
+  <% end %>
+  <nav class="navbar navbar-static-top">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only"> <%= t ".toggle_navigation" %></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to t(".link_sign_out"),
+            destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
