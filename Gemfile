@@ -25,6 +25,9 @@ gem "omniauth-twitter"
 gem "google-api-client"
 gem "devise", "4.2.0"
 gem "figaro"
+gem "flexslider", "2.2.0"
+gem "jscrollpane-rails", "2.0.23"
+gem "jquery-easing-rails", "0.0.2"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"
