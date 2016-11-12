@@ -30,14 +30,16 @@
         <span class="lb-total"><%= t ".total" %></span>
         <span class="pull-right">
           <span class="lb-cost">
-            <%= number_to_currency total_cost(@products), unit: t(".currency") %>
+            <%= number_to_currency total_cost(@products),
+              unit: t(".currency") %>
           </span>
         </span>
       </div>
     </div>
     <hr>
     <div class="row">
-      <%= link_to t(".btn_proceed"), "#", class: "btn btn-primary btn-proceed" %>
+      <%= link_to t(".btn_proceed"), new_order_path,
+        class: "btn btn-primary btn-proceed" %>
     </div>
   </div>
 </div>

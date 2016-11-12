@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
 
   private
   def load_product
-    @product = Product.includes(:category).with_average_rating(params[:id]).first
+    @product = Product.includes(:category)
+      .with_average_rating(params[:id])
+      .first
     unless @product
       flash[:warning] =  t "products.load_fails"
       return render_404
