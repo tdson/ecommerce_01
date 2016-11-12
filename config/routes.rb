@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "cart/clear", to: "carts#destroy", as: :clear_cart
   delete "cart/:product_id", to: "carts#remove", as: :remove_cart_item
   get "cart", to: "carts#index"
+  resources :orders, only: [:new, :create, :show]
 end

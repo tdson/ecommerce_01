@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :ratings, dependent: :destroy
-  has_one :order
 
   enum roles: [:admin, :mod, :member]
 

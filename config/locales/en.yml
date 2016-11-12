@@ -48,6 +48,37 @@ en:
       link_rm: "Remove"
       btn_cancel: "Clear all"
       btn_proceed: "Proceed to checkout"
+  orders:
+    new:
+      step_1: "Step 1"
+      step_2: "Step 2"
+      step_3: "Step 3"
+      icon_st_1: "1"
+      icon_st_2: "2"
+      icon_st_3: "3"
+      lb_full_name: "Full name"
+      lb_phone: "Phone number"
+      lb_address: "Shipping address"
+      btn_next: "Next"
+      lb_method: "Payment method"
+      method_1: "Pay when receive shipments."
+      method_2: "Payment via Paypal (comming soon)."
+      cfr_msg: "Before submit order, please check the information bellow again."
+      btn_submit: "Check out"
+    create:
+      success: "Your order has been created!"
+      fails: "Opps... something went wrong, cannot create order, try later."
+  model_mailer:
+    new_order_created:
+      subject: "Order Receipt"
+      header: "FraMarket.com"
+      greeting: "Dear %{name},"
+      mgs_thank_you: "Thank you for your order. For full details, click the link bellow:"
+      th_product: "Product"
+      th_price: "Price"
+      th_quantity: "Quantity"
+      lb_total: "Total"
+      currency: "VND"
   admin:
     base_title: "Dashboard ECommerce"
     role_0: "Admin"
