@@ -53,11 +53,7 @@ $.fn.megamenu = function(e) {
     interval: 250
   };
   var n = 0;
-  $('.megamenu').prepend('<li class='
-    showhide '><span class='
-    title '>MENU</span><span class='
-    icon1 '></span><span class='
-    icon2 '></span></li>');
+  $('.megamenu').prepend("<li class='showhide'><span class='title'>MENU</span><span class='icon1'></span><span class='icon2'></span></li>");
   r();
   $(window).resize(function() {
     r()

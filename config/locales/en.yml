@@ -90,6 +90,7 @@ en:
       method_2: "Payment via Paypal (comming soon)."
       cfr_msg: "Before submit order, please check the information bellow again."
       btn_submit: "Check out"
+      empty_cart: "Shopping cart is now empty, add more items to make an order."
     create:
       success: "Your order has been created!"
       fails: "Opps... something went wrong, cannot create order, try later."
@@ -110,3 +111,8 @@ en:
     role_1: "Mod"
     role_2: "Member"
     layouts:
+    statistics:
+      index:
+        stat_orders: "Order chart of last 7 days"
+        stat_product: "Top 10 products of last 7 days"
+        quantity: "Quantity"

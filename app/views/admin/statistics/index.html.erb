@@ -1,0 +1,41 @@
+<div class="col-md-12">
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title"><%= t ".stat_orders" %></h3>
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+          <i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="box-body chart-responsive">
+      <div class="chart" id="line-chart"></div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="x_panel">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".stat_product" %></h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body chart-responsive">
+        <div class="chart" id="graph_bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "lib_morris" %>
+<%= render "index.js.erb" %>
+<%= javascript_include_tag "statistics", "data-turbolinks-track": true %>

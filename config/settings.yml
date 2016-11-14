@@ -9,3 +9,5 @@ class_default: "default"
 class_danger: "danger"
 minimum_qty: 1
 empty_cart: 0
+statistics_in_seven_days: 7
+limit_top_product: 10

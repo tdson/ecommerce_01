@@ -51,6 +51,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-     "/assets/" + [version_name, Settings.default_avatar].compact.join('_')
+     "/assets/" + [version_name, Settings.avatar_default].compact.join('_')
   end
 end

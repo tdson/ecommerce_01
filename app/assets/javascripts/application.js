@@ -16,6 +16,11 @@
 //= require bootstrap
 //= require jquery.easing
 //= require jquery.flexslider-min
-//= require_tree .
 //= require admin_lte/admin_lte
 //= require social-share-button
+//= require cable
+//= require fb_plugin
+//= require media
+//= require megamenu
+//= require orders
+//= require products
