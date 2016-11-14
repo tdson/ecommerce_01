@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require turbolinks
 //= require bootstrap
 //= require jquery.easing
 //= require_tree .
 //= require admin_lte/admin_lte
 //= require chat.js
+//= require megamenu.js
+//= require main.js

@@ -57,10 +57,14 @@ GEM
       rails-assets-jquery-knob
       rails-assets-jquery-sparkline
       select2-rails
+    ajax-datatables-rails (0.3.1)
+      railties (>= 3.1)
     ansi (1.5.0)
     arel (7.1.4)
     autoprefixer-rails (6.5.3)
       execjs
+    awesome_nested_set (3.1.1)
+      activerecord (>= 4.0.0, < 5.1)
     bcrypt (3.1.11)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
@@ -304,7 +308,11 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     retriable (2.1.0)
+    roo (2.5.1)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
     ruby-progressbar (1.8.1)
+    rubyzip (1.2.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -358,6 +366,8 @@ PLATFORMS
 
 DEPENDENCIES
   admin_lte-rails
+  ajax-datatables-rails
+  awesome_nested_set
   bcrypt (= 3.1.11)
   bootstrap-kaminari-views
   bootstrap-sass (= 3.3.6)
@@ -398,6 +408,7 @@ DEPENDENCIES
   rails-assets-jquery-knob!
   rails-assets-jquery-sparkline!
   rails-controller-testing (= 0.1.1)
+  roo (~> 2.5.0)
   sass-rails (= 5.0.6)
   spring (= 1.7.2)
   spring-watcher-listen (= 2.0.0)

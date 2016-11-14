@@ -45,11 +45,22 @@
         <li class="active grid">
           <%= link_to t(".link_home"), "#", class: "color1" %>
         </li>
-        <% @categories.each do |category| %>
-        <li class="grid">
-          <%= link_to category.name, "", class: "color2" %>
-          <div class="megapanel"></div>
-        </li>
+        <% nested_set_options(@categories) do |category, index| %>
+          <li class="grid">
+              <% if category.root? %>
+            <%= link_to category.name, "#", class: "color2" %>
+            <div class="megapanel">
+              <div class="row">
+                <%end%>
+                <div class="col1">
+                    <div class="h_nav">
+                    </div>
+                </div>
+              <% if index == (@categories).size-1 %>
+              </div>
+              </div>
+              <% end %>
+          </li>
         <% end %>
       </ul>
     </div>

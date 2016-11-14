@@ -37,6 +37,9 @@ source "https://rails-assets.org" do
   gem "rails-assets-admin-lte"
 end
 gem "admin_lte-rails"
+gem "awesome_nested_set"
+gem "ajax-datatables-rails"
+gem "roo", "~> 2.5.0"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"

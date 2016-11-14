@@ -1,5 +1,31 @@
 en:
   products:
+    admin:
+      index:
+        bt_new: "New"
+        bt_edit: "Edit"
+        bt_del: "Delete"
+        activities: "Activities"
+        name: "Name"
+        price: "Price"
+        image: "Image"
+        description: "Description"
+        category: "Category"
+        quantity: "Quantity"
+        delete_success: "Delete this product successfully !"
+        delete_fail: "You cant delete this product !"
+        confirm_delete: "Are you sure ?"
+        not_found: "Product not found !"
+      new:
+        create_success: "Create product successfully !"
+        create_fail: "Cant create this product !"
+        bt_create: "Create"
+        create_product: "Create Product"
+      edit:
+        update_success: "Update product successfully !"
+        update_fail: "Cant update this product !"
+        bt_update: "Update"
+        edit_product: "Edit Product"
     index:
       link_sign_out: "Sign out"
     list_products:

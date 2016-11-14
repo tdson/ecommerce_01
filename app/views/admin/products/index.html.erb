@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <%= link_to t("products.admin.index.bt_new"), new_admin_product_path, class:
+      "glyphicon glyphicon-plus btn btn-lg btn-primary" %>
+    <div class="responsive-table ">
+      <table id="table_list"
+        class="table dataTables table-striped table-bordered">
+        <thead>
+          <tr>
+            <th class = "text-center"><%= t "products.admin.index.name" %></th>
+            <th class = "text-center"><%= t "products.admin.index.image" %></th>
+            <th class = "text-center"><%= t "products.admin.index.quantity" %></th>
+            <th class = "text-center"><%= t "products.admin.index.price" %></th>
+            <th class = "text-center"><%= t "products.admin.index.category" %></th>
+            <th class = "text-center"><%= t "products.admin.index.activities" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td class = "text-center">
+                <%= product.name.titleize %>
+              </td>
+              <td class = "text-center">
+                <%= image_tag product.image ,class: "product_icon"%>
+              </td>
+              <td class = "text-center">
+                <%= product.quantity %>
+              </td>
+              <td class = "text-center">
+                <%= product.price %>
+              </td>
+              <td class = "text-center">
+                <%= product.category.name.titleize %>
+              </td>
+              <td class = "text-center">
+                <%= link_to t("products.admin.index.bt_edit"), edit_admin_product_path(product), class:
+                  "glyphicon glyphicon-edit btn btn-lg btn-primary" %>
+                <%= link_to t("products.admin.index.bt_del"), admin_product_path(product), method:
+                  :delete,remote: true, data: {confirm: t("products.admin.index.confirm_delete")}, class:
+                  "glyphicon glyphicon-remove btn btn-lg btn-primary" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @products, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>
