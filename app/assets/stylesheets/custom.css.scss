@@ -2,6 +2,7 @@
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
 body, html {
   font-family: 'Open Sans', sans-serif;
   font-size: 100%;
@@ -2912,4 +2913,10 @@ ul.qty li p {
 .container {
   padding-left: 0!important;
   padding-right: 0!important;
+}
+
+header {
+  .logo {
+    margin: 0;
+  }
 }

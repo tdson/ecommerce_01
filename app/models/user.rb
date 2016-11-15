@@ -3,11 +3,13 @@ class User < ApplicationRecord
     :trackable, :confirmable, :omniauthable,
     omniauth_providers: [:facebook, :google_oauth2, :twitter]
 
+  mount_uploader :avatar, ImageUploader
+
   has_many :orders, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
-  enum roles: [:admin, :mod, :member]
+  enum role: [:admin, :mod, :member]
 
   validates :name, presence: true, length: {minimum: 2, maximum: 128}
   validates :email, presence: true, if: ->{self.provider.blank?}

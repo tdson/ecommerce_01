@@ -28,6 +28,15 @@ gem "jscrollpane-rails", "2.0.23"
 gem "jquery-easing-rails", "0.0.2"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+source "https://rails-assets.org" do
+  gem "rails-assets-bootstrap-rtl"
+  gem "rails-assets-jquery-knob"
+  gem "rails-assets-bootstrap-daterangepicker"
+  gem "rails-assets-jquery-sparkline"
+  gem "rails-assets-jquery-icheck"
+  gem "rails-assets-admin-lte"
+end
+gem "admin_lte-rails"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"
