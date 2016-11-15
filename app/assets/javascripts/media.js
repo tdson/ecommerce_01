@@ -1,17 +1,12 @@
 jQuery(document).ready(function($) {
   $('.services_nav_list li').click(function() {
     var selected = $(this).data('service');
-    if (!$('.view[data-service='
-        ' + selected + '
-        ']').hasClass('active')) {
+    if (!$('.view[data-service=' + selected + ']').hasClass('active')) {
       $('.services_nav_list').find('li.active').removeClass('active');
       $('.view.active').removeClass('active');
-      $('.services_nav_list li[data-service='
-        ' + selected + '
-        ']').addClass('active');
-      $('.view[data-service='
-        ' + selected + '
-        ']').addClass('active');
+      $('.services_nav_list li[data-service=' + selected + ']')
+        .addClass('active');
+      $('.view[data-service=' + selected + ']').addClass('active');
     } else {
       return false;
     }
@@ -25,9 +20,7 @@ jQuery(document).ready(function($) {
       return false;
     } else {
       active.removeClass('active');
-      $('.view[data-service='
-        ' + (selected+1) + '
-        ']').addClass('active');
+      $('.view[data-service=' + (selected + 1) + ']').addClass('active');
     }
     var height = $('.view.active').height();
     $('.service_wrapper').css('height', height);
@@ -40,26 +33,19 @@ jQuery(document).ready(function($) {
       return false;
     } else {
       active.removeClass('active');
-      $('.view[data-service='
-        ' + (selected-1) + '
-        ']').addClass('active');
+      $('.view[data-service=' + (selected - 1) + ']').addClass('active');
     }
     var height = $('.view.active').height();
     $('.service_wrapper').css('height', height);
   });
   $('.selectors_wrapper li').click(function() {
     var selected = $(this).data('selector');
-    if (!$('.standard[data-selector='
-        ' + selected + '
-        ']').hasClass('active')) {
+    if (!$('.standard[data-selector=' + selected + ']').hasClass('active')) {
       $('.selectors_wrapper').find('li.active').removeClass('active');
       $('.standard.active').removeClass('active');
-      $('.selectors_wrapper li[data-selector='
-        ' + selected + '
-        ']').addClass('active');
-      $('.standard[data-selector='
-        ' + selected + '
-        ']').addClass('active');
+      $('.selectors_wrapper li[data-selector=' + selected + ']')
+        .addClass('active');
+      $('.standard[data-selector=' + selected + ']').addClass('active');
       var height2 = $('.standard.active').height();
       $('.standard_content').css('height', height2);
     } else {
