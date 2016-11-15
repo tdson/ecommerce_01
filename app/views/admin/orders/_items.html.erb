@@ -1,0 +1,24 @@
+<%= f.fields_for :order_products, @order.order_products do |f_product| %>
+  <tr>
+    <td>
+      <%= link_to f_product.object.product.name, product_path(f_product.object.product.id) %>
+    </td>
+    <td>
+      <%= f_product.hidden_field :id, value: f_product.object.id %>
+      <%= f_product.number_field :quantity,
+        {class: "form-control quantity-f", min: 1} %>
+      <b class="link-update", id="link-update-<%= f_product.object.id %>">
+        <%= t(".btn_update") %>
+      </b>
+      <i></i>
+    </td>
+    <td><%= f_product.object.current_price %></td>
+    <td>
+      <%= link_to admin_order_product_path(f_product.object.id), method: :delete,
+        data: {confirm: t("admin.delete_confirmation")} do %>
+        <i class="fa fa-trash"></i>
+        <%= t "carts.index.link_rm" %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

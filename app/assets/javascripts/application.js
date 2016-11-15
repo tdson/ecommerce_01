@@ -24,3 +24,5 @@
 //= require megamenu
 //= require orders
 //= require products
+//= require search
+//= require check_order_product

@@ -13,8 +13,6 @@ gem "bcrypt",       "3.1.11"
 gem "faker",        "1.6.6"
 gem "bootstrap-sass",          "3.3.6"
 gem "font-awesome-sass",       "~> 4.6.2"
-gem "will_paginate", "~> 3.1", ">= 3.1.5"
-gem "bootstrap-will_paginate", "0.0.10"
 gem "carrierwave",             "0.11.2"
 gem "mini_magick",             "4.5.1"
 gem "jquery-datatables-rails", "~> 3.4"
@@ -38,6 +36,8 @@ source "https://rails-assets.org" do
 end
 gem "admin_lte-rails"
 gem "social-share-button"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"

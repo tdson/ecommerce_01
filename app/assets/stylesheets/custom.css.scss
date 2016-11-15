@@ -4118,3 +4118,21 @@ h1 {
   width: 100%;
   height: 600px;
 }
+.search-field {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+.quantity-f {
+  width: 80px;
+  max-width: 80px;
+}
+#cart-table {
+  .quantity-f {
+    float: left;
+  }
+  .link-update {
+    padding: 0 5px 0 10px;
+    cursor: pointer;
+    height: 34px;
+  }
+}

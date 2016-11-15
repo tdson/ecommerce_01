@@ -1,4 +1,12 @@
 en:
+  time:
+    formats:
+      date: "%d-%m-%Y"
+      date_time: "%H:%m:%S %d-%m-%Y"
+  currency: "$"
+  validation:
+    product:
+      not_enough: "is invalid, there are only %{qty} remaining."
   breadcrumb:
     home: "Home"
     cart: "Shopping cart"
@@ -54,7 +62,7 @@ en:
       link_sign_out: "Sign out"
     show:
       price: "Price:"
-      currency: "VND"
+      currency: "$"
       status: "Status:"
       quantity: "Quantity:"
       btn_add_cart: "add to cart"
@@ -69,11 +77,17 @@ en:
       lb_qty: "Quantity"
       options: "Options"
       total: "Total:"
-      currency: "VND"
+      currency: "$"
       link_rm: "Remove"
       btn_cancel: "Clear all"
       btn_proceed: "Proceed to checkout"
   orders:
+    load_fails: "Order not found!"
+    update:
+      success: "Order has been canceled!"
+      fails: "Sorry, cannot close this order right now!"
+      cannot_cancel: "Sorry, this order has been confirmed."
+      cancel_fails: "Opps... cannot cancel this order right now."
     new:
       step_1: "Step 1"
       step_2: "Step 2"
@@ -104,15 +118,59 @@ en:
       th_price: "Price"
       th_quantity: "Quantity"
       lb_total: "Total"
-      currency: "VND"
+      currency: "$"
   admin:
     base_title: "Dashboard ECommerce"
     role_0: "Admin"
     role_1: "Mod"
     role_2: "Member"
+    delete_confirmation: "Are you sure?"
+    search_holder: "Search..."
     layouts:
     statistics:
       index:
         stat_orders: "Order chart of last 7 days"
         stat_product: "Top 10 products of last 7 days"
         quantity: "Quantity"
+    orders:
+      load_fails: "Order not found!"
+      index:
+        header: "Pending orders"
+        th_order_id: "Order ID"
+        th_user: "Owner"
+        th_address: "Address"
+        th_time: "Time"
+        th_status: "Status"
+        th_action: "Action"
+      order:
+        name_prefix: "Order #%{id}"
+      destroy:
+        success: "Order has been deleted!"
+        fails: "Opps... cannot delete this order!"
+      edit:
+        header: "Edit Order#%{id}"
+        btn_cancel: "Cancel Order"
+        lb_product: "Product"
+        lb_price: "Price"
+        lb_qty: "Quantity"
+        options: "Options"
+        total: "Total:"
+        currency: "$"
+        link_rm: "Remove"
+        btn_proceed: "Save & Approve"
+        lb_full_name: "Full name"
+        lb_phone: "Phone number"
+        lb_address: "Shipping address"
+        lb_method: "Payment method"
+      items:
+        btn_update: "check & save"
+      update:
+        success: "Updated successfully."
+        fails: "Opps... cannot approve this order right now."
+    order_products:
+      load_fails: "Item not found!"
+      update:
+        success: "Quantity has been updated!"
+      destroy:
+        success: "Product has been removed!"
+        fails: "Opps... cannot remove this product right now!"

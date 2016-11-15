@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_cart
+  before_action :check_cart, only: [:new, :create]
+  before_action :load_order, only: :update
+  before_action :check_cancelable, only: :update
+  before_action :update_product_quantity, only: :update
 
   def new
     @order = Order.new
@@ -23,6 +26,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    if @order.update_attribute :status, Settings.order_status[:canceled]
+      flash[:success] = t ".success"
+    else
+      flash[:danger] = t ".fails"
+    end
+    redirect_to :back || root_path
+  end
+
   private
   def order_params
     params.permit :full_name, :phone, :shipping_address
@@ -36,8 +48,25 @@ class OrdersController < ApplicationController
     end
   end
 
-  def send_receipt_to_mail
-    order = Order.includes(:user, :order_products).find self.id
-    ModelMailer.new_order_created(order).deliver
+  def load_order
+    @order = Order.find_by_id params[:id]
+    unless @order
+      flash[:danger] = t "orders.load_fails"
+      redirect_to root_path
+    end
+  end
+
+  def check_cancelable
+    unless @order.status == Settings.order_status_in_word[:pending]
+      flash[:warning] = t "orders.update.cannot_cancel"
+      redirect_to :back || root_path
+    end
+  end
+
+  def update_product_quantity
+    unless @order.give_product_back
+      flash[:danger] = t "orders.update.cancel_fails"
+      redirect_to :back || root_path
+    end
   end
 end

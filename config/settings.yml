@@ -11,3 +11,11 @@ minimum_qty: 1
 empty_cart: 0
 statistics_in_seven_days: 7
 limit_top_product: 10
+order_per_page: 20
+order_status_classes: {pending: "danger", done: "primary", canceled: "default"}
+order_status: {pending: 0, done: 1, canceled: 2}
+order_status_in_word: {pending: "pending", done: "done", canceled: "canceled"}
+line_break: "<br/>"
+js_line_break: "/n"
+html_status: {success: 200, bad_request: 400}
+round_to_hundred: 2

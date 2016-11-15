@@ -21,4 +21,8 @@ module ApplicationHelper
     end
     @total
   end
+
+  def to_currency number
+    "#{t 'currency'}%.2f" % number
+  end
 end
