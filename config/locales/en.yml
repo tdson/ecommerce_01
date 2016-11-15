@@ -2,12 +2,17 @@ en:
   products:
     index:
       link_sign_out: "Sign out"
+    list_products:
+      details: "Details"
+      all: "All"
+      dollar: "$"
   layouts:
     application:
       base_title: "FraMarket"
     header:
       logo_alt: "FraMarket"
       link_home: "Home"
+      link_product: "Product"
       empty_cart: "Empty Cart"
       items: "Items"
       sign_in: "Sign In"

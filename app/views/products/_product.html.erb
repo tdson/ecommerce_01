@@ -1,0 +1,17 @@
+<div class="products-grd ">
+  <div class="p-one simpleCart_shelfItem prd">
+    <%= image_tag product.image, class: "img-responsive" %>
+    <h4><%= product.name %></h4>
+    <p>
+      <%= link_to "#", class: "item_add" do %>
+        <i class="glyphicon glyphicon-shopping-cart"></i>
+        <span class=" item_price valsa">
+          <%= t "products.list_products.dollar" %><%= product.price %>
+        </span>
+      <% end %>
+    </p>
+    <div class="pro-grd">
+      <%= link_to t("products.list_products.details"), "#" %>
+    </div>
+  </div>
+</div>
