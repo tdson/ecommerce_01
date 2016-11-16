@@ -8,3 +8,4 @@ class_default: "default"
 class_danger: "danger"
 minimum_qty: 1
 empty_cart: 0
+id_chatwork_group: 61067695
