@@ -10,6 +10,6 @@ class Product < ApplicationRecord
   scope :recent, ->{order created_at: :DESC}
 
   def sold_out?
-    self.quantity <= Settings.sold_out
+    self.quantity < Settings.minimum_quantity
   end
 end
