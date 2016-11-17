@@ -4,12 +4,15 @@
       <div class="top_right"></div>
       <div class="top_left">
         <ul>
-          <li>
-            <%= link_to t("sign_in"), "#" %>
-          </li>
-          <li>
-            <%=link_to t("sign_up"), "#"%>
-          </li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to t(".sign_out"), destroy_user_session_path,
+                method: :delete %>
+            </li>
+          <% else %>
+            <li><%= link_to t(".sign_in"), new_user_session_path %></li>
+            <li><%= link_to t(".sign_up"), new_user_registration_path %></li>
+          <% end %>
         </ul>
       </div>
       <div class="clearfix"></div>
@@ -46,7 +49,7 @@
           <%= link_to t(".link_home"), "#", class: "color1" %>
         </li>
         <li class="grid">
-          <%= link_to "", "", class: "color2" %>
+          <%= link_to "", "#", class: "color2" %>
           <div class="megapanel"></div>
         </li>
       </ul>

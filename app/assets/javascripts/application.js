@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery.easing
+//= require jquery.flexslider-min
 //= require_tree .
 //= require admin_lte/admin_lte
 //= require chat.js
+//= require social-share-button

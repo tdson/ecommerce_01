@@ -1,11 +1,7 @@
 en:
-  products:
-    index:
-      link_sign_out: "Sign out"
-    list_products:
-      details: "Details"
-      all: "All"
-      dollar: "$"
+  currency: "$"
+  breadcrumb:
+    home: "Home"
   layouts:
     application:
       base_title: "FraMarket"
@@ -17,6 +13,7 @@ en:
       items: "Items"
       sign_in: "Sign In"
       sign_up: "Sign Up"
+      sign_out: "Sign out"
     footer:
       copyright: "2016. Design and Developed by"
       author_name: "Son Tran & Nhat Doan"
@@ -49,3 +46,20 @@ en:
         nav_statistics: "Statistics"
         nav_users: "Users"
         nav_requests: "Requests"
+  products:
+    load_fails: "Product not found!"
+    out: "Sold out"
+    available: "Avalable"
+    index:
+      link_sign_out: "Sign out"
+    show:
+      price: "Price:"
+      status: "Status:"
+      quantity: "Quantity:"
+      btn_add_cart: "add to cart"
+      btn_share: "Share"
+      rating: "Rating (%{count}):"
+    list_products:
+      details: "Details"
+      all: "All"
+      dollar: "$"

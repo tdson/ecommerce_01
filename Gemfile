@@ -37,6 +37,7 @@ source "https://rails-assets.org" do
   gem "rails-assets-admin-lte"
 end
 gem "admin_lte-rails"
+gem "social-share-button"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"
