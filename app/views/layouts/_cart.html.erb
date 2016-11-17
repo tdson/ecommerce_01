@@ -1,0 +1,17 @@
+<%= link_to carts_path do %>
+  <div class="total">
+    <span class="simpleCart_total"></span>
+    <span id="simpleCart_quantity" class="simpleCart_quantity" ></span>
+    <%= t ".cart" %>
+  </div>
+  <i class="fa fa-shopping-cart fa-2x"></i>
+<% end %>
+<p>
+  <% unless count_cart_size == Settings.empty_cart %>
+    <%= link_to pluralize(count_cart_size, t(".items")), carts_path,
+      class: "simpleCart_empty label label-danger pull-right" %>
+  <% else %>
+    <%= link_to t(".empty"), "#", class: "simpleCart_empty pull-right" %>
+  <% end %>
+</p>
+<div class="clearfix"></div>

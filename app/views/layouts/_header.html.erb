@@ -27,19 +27,8 @@
           <%= link_to image_tag("project2_logo.png", alt: t(".logo_alt")) %>
         </div>
         <div class="header_right">
-          <div class="cart box_1">
-            <%= link_to "#" do %>
-              <div class="total">
-                <span class="simpleCart_total"></span>
-                <span id="simpleCart_quantity" class="simpleCart_quantity" ></span>
-                <%= t ".items" %>
-              </div>
-              <i class="glyphicon glyphicon-shopping-cart"></i>
-            <% end %>
-            <p>
-              <%= link_to t(".empty_cart"), "#", class: "simpleCart_empty" %>
-            </p>
-            <div class="clearfix"></div>
+          <div class="cart box_1" id="cart-icon">
+            <%= render "layouts/cart" %>
           </div>
         </div>
         <div class="clearfix"></div>

@@ -50,12 +50,17 @@
               <span><%= t ".quantity" %></span>
             </strong>
             <div class="product-qty">
-              <%= number_field_tag :quantity, nil, min: 1,
-                class: "form-control", id: "field-qty" %>
-              <%= button_tag type: :button, id: "btn-add-cart",
-                class: "form-control btn btn-primary btn-flat" do %>
-                <i class="fa fa-cart-plus"></i>
-                <%= t ".btn_add_cart" %>
+              <%= form_tag carts_path, id: "form-add-to-cart",
+                remote: true do %>
+                <%= hidden_field_tag :product_id, @product.id %>
+                <%= number_field_tag :quantity, Settings.init_quantity,
+                  min: Settings.minimum_quantity, class: "form-control",
+                  id: "field-qty" %>
+                <%= button_tag id: "btn-add-cart",
+                  class: "form-control btn btn-primary btn-flat" do %>
+                  <i class="fa fa-cart-plus"></i>
+                  <%= t ".btn_add_cart" %>
+                <% end %>
               <% end %>
             </div>
           </div>

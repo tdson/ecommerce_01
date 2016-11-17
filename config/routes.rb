@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :category, only: :show
   devise_for :users,
     controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+  resources :carts, except: [:show, :edit, :update]
+  resources :orders, only: :new
 end
