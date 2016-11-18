@@ -55,6 +55,8 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.5.3)
       execjs
+    autosize-rails (1.18.17)
+      rails (>= 3.1)
     bcrypt (3.1.11)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
@@ -355,6 +357,7 @@ PLATFORMS
 
 DEPENDENCIES
   admin_lte-rails
+  autosize-rails
   bcrypt (= 3.1.11)
   bootstrap-kaminari-views
   bootstrap-sass (= 3.3.6)

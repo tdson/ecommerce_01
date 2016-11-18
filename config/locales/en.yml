@@ -1,5 +1,8 @@
 en:
   currency: "$"
+  time:
+    formats:
+      date_time: "%H:%m:%S %d-%m-%Y"
   breadcrumb:
     home: "Home"
     cart: "Shopping cart"
@@ -10,11 +13,10 @@ en:
       logo_alt: "FraMarket"
       link_home: "Home"
       link_product: "Product"
-      empty_cart: "Empty Cart"
-      items: "Items"
       sign_in: "Sign In"
       sign_up: "Sign Up"
       sign_out: "Sign out"
+      greeting_txt: "Welcome, %{name}"
     cart:
       empty: "Empty"
       items: "item"
@@ -51,6 +53,22 @@ en:
         nav_statistics: "Statistics"
         nav_users: "Users"
         nav_requests: "Requests"
+  carts:
+    not_enough: "Sorry, there are only %{qty} remaining."
+    added: "Successfully added."
+    index:
+      lb_product: "Product"
+      lb_price: "Unit Price"
+      lb_qty: "Quantity"
+      options: "Options"
+      total: "Total:"
+      link_rm: "Remove"
+      btn_cancel: "Empty the cart"
+      btn_proceed: "Proceed to checkout"
+      btn_cancel: "Empty the cart"
+      btn_proceed: "Proceed to checkout"
+      title: "(%{qty}) Cart"
+      title_empty: "Cart"
   products:
     load_fails: "Product not found!"
     out: "Sold out"
@@ -63,28 +81,100 @@ en:
       quantity: "Quantity:"
       btn_add_cart: "add to cart"
       btn_share: "Share"
+    rating:
       rating: "Rating (%{count}):"
     list_products:
       details: "Details"
       all: "All"
       dollar: "$"
-  carts:
-    not_enough: "Sorry, there are only %{qty} remaining."
-    added: "Successfully added."
+    last_viewed:
+      header: "Last viewed"
+      link_all: "View all"
+  orders:
+    empty_cart: "Cart is empty, add product to cart to continue."
+    user_not_found: "User not found!"
+    new:
+      step_1: "Step 1"
+      step_2: "Step 2"
+      step_3: "Step 3"
+      icon_st_1: "1"
+      icon_st_2: "2"
+      icon_st_3: "3"
+      lb_full_name: "Full name"
+      lb_phone: "Phone number"
+      lb_address: "Shipping address"
+      btn_next: "Next"
+      lb_method: "Payment method"
+      method_1: "Pay when receive shipments."
+      method_2: "Payment via Paypal (comming soon)."
+      cfr_msg: "Before submit order, please check the information bellow again."
+      btn_submit: "Check out"
+    create:
+      success: "Your order has been created!"
+      fails: "Opps... something went wrong, cannot create order, try later."
+    order:
+      name: "Order #%{id}"
     index:
-      lb_product: "Product"
-      lb_price: "Unit Price"
-      lb_qty: "Quantity"
-      options: "Options"
-      total: "Total:"
+      order: "Order"
+      date: "Date"
+      status: "Status"
+      header: "Order History"
+      title: "Order History"
+  model_mailer:
+    new_order_created:
+      subject: "Order Receipt"
+      header: "FraMarket.com"
+      greeting: "Dear %{name},"
+      mgs_thank_you: "Thank you for your order. For full details, click the link bellow:"
+      th_product: "Product"
+      th_price: "Price"
+      th_quantity: "Quantity"
+      lb_total: "Total"
       currency: "VND"
-      link_rm: "Remove"
-      btn_cancel: "Empty the cart"
-      btn_proceed: "Proceed to checkout"
-      title: "(%{qty}) Cart"
-      title_empty: "Cart"
-  admin:
-    base_title: "Dashboard ECommerce"
-    role_0: "Admin"
-    role_1: "Mod"
-    role_2: "Member"
+  users:
+    load_fails: "User not found!"
+    update_info:
+      info_sction: "Update Account Information"
+      name: "Full name"
+      gender: "Gender"
+      phone_no: "Phone number"
+      chatwork_id: "Chatwork ID"
+      address: "Address"
+      btn_submit: "Submit"
+      title: "Account Settings"
+    update_settings:
+      settings_section: "Update Account Settings"
+      infor_1: "Verify current password to change email or password."
+      infor_2: "Leave New password blank if you don't want to change."
+      lb_email: "Email"
+      lb_password_old: "Current password"
+      lb_password_new: "New password"
+      lb_password_conf: "Password confirmation"
+      lb_permission: "Permission"
+      lb_is_admin: "Administrator"
+      btn_submit: "Update"
+      title: "Change Email And Password"
+    update:
+      success: "Profile has been updated!"
+      fails: "Update fails, try later!"
+      incorrect_password: "is incorrect!"
+  shared:
+    left_panel:
+      menu: "Menu"
+      order_history: "Order History"
+      account_settings: "Account Settings"
+      send_request: "Request New Product"
+      change_password: "Change email and password"
+      recently_viewed: "Recently Viewed"
+  recently_viewed_products:
+    index:
+      header: "Recently Viewed Products"
+      title: "Recently Viewed"
+  suggestions:
+    new:
+      title: "Request New Product"
+      header: "Request New Product"
+      label: "Please give us some information about product which is going to be requested"
+      btn_submit: "Submit"
+    create:
+      success: "Thank you for your contribution!"

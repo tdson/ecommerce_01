@@ -1,48 +1,65 @@
-<h2><%= t ".header", resource: resource_name.to_s.humanize %></h2>
-
-<%= form_for resource, as: resource_name, url: registration_path(resource_name),
-  html: {method: :put} do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="account">
+  <div class="container">
+    <div class="account-bottom">
+      <div class="col-md-4">
+        <%= render "shared/left_panel" %>
+      </div>
+      <div class="col-md-8 account-left">
+        <div class="orders-section">
+          <div class="account-top heading">
+            <h3><%= t ".header", resource: resource_name.to_s.humanize %></h3>
+          </div>
+          <%= form_for resource, as: resource_name, html: {method: :put},
+            url: registration_path(resource_name) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="address">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true,
+                class: "form-control" %>
+            </div>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>
+                <%= t ".msg_1" %> <b><%= resource.unconfirmed_email %></b>
+              </div>
+            <% end %>
+            <div class="address">
+              <%= f.label :current_password %>
+              <small><%= t ".curr_pass_tool_tip" %></small>
+              <%= f.password_field :current_password, autocomplete: "off",
+                class: "form-control" %>
+            </div>
+            <div class="address">
+              <%= f.label :password %>
+              <small><%= t ".pass_tool_tip" %></small>
+              <%= f.password_field :password, autocomplete: "off",
+                class: "form-control" %>
+              <% if @minimum_password_length %>
+                <br />
+                <em>
+                  <%= t ".msg_length_min", number: @minimum_password_length %>
+                </em>
+              <% end %>
+            </div>
+            <div class="address">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, autocomplete: "off",
+                class: "form-control" %>
+            </div>
+            <div class="address text-center">
+              <%= f.submit t(".btn_submit") %>
+            </div>
+          <% end %>
+          <hr>
+          <div class="account-top heading">
+            <h3><%= t ".header_2" %></h3>
+          </div>
+          <p class="text-danger"><%= t ".msg" %></p>
+          <%= button_to t(".link_cancel"), registration_path(resource_name),
+            data: {confirm: t(".msg_conf")}, method: :delete,
+            class: "btn btn-danger btn-flat" %>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t ".msg_1" %> <b><%= resource.unconfirmed_email %></b></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i><%= t ".pass_tool_tip" %></i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= t ".msg_length_min", number: @minimum_password_length %></em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i><%= t "curr_pass_tool_tip" %></i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t(".btn_submit") %>
-  </div>
-<% end %>
-
-<h3><%= t ".header_2" %></h3>
-
-<p>
-  <%= t ".msg" %>
-  <%= button_to "Cancel my account", registration_path(resource_name),
-    data: {confirm: t(".msg_conf")}, method: :delete %>
-</p>
-
-<%= link_to t(".link_back"), :back %>
+</div>

@@ -20,3 +20,4 @@
 //= require admin_lte/admin_lte
 //= require chat.js
 //= require social-share-button
+//= require jquery.autosize

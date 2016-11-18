@@ -1,0 +1,37 @@
+<section  class="sky-form">
+  <h4><%= t ".menu" %></h4>
+  <div class="row1 scroll-pane">
+    <div class="col col-4">
+      <ul class="menu">
+        <%= link_to user_orders_path(current_user) do %>
+          <li class="menu-item
+            <%= active_class user_orders_path(current_user) %>">
+            <%= t ".order_history" %>
+          </li>
+        <% end %>
+        <%= link_to edit_user_path(current_user) do %>
+          <li class="menu-item
+            <%= active_class edit_user_path(current_user) %>">
+            <%= t ".account_settings" %>
+          </li>
+        <% end %>
+        <%= link_to edit_user_registration_path do %>
+          <li class="menu-item <%= active_class edit_user_registration_path %>">
+            <%= t ".change_password" %>
+          </li>
+        <% end %>
+        <%= link_to recently_viewed_products_path do %>
+          <li class="menu-item
+            <%= active_class recently_viewed_products_path %>">
+            <%= t ".recently_viewed" %>
+          </li>
+        <% end %>
+        <%= link_to new_suggestion_path do %>
+          <li class="menu-item <%= active_class new_suggestion_path %>">
+            <%= t ".send_request" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
