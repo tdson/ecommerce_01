@@ -6,26 +6,26 @@
   <%= order_url @order.id %>
 </p>
 <p>
-  <table>
-    <thead>
+  <table style="width: 50%;">
+    <thead style="background-color: #aaa;">
       <th><%= t ".th_product" %></th>
       <th><%= t ".th_quantity" %></th>
       <th><%= t ".th_price" %></th>
     </thead>
-    <tbody>
+    <tbody style="background-color: #eee;">
       <% @order.order_products.each do |item| %>
         <tr>
           <td><%= item.product.name %></td>
-          <td><%= item.quantity %></td>
-          <td><%= item.product.price %></td>
+          <td style="text-align: right;"><%= item.quantity %></td>
+          <td style="text-align: right;"><%= item.product.price %></td>
         </tr>
       <% end %>
       <tr>
         <td></td>
-        <td><%= t ".lb_total" %></td>
-        <td>
+        <td style="text-align: right;"><%= t ".lb_total" %></td>
+        <td style="text-align: right;">
           <strong>
-            <%= number_to_currency @order.total_cost, unit: t(".currency") %>
+            <%= number_to_currency @order.total_cost, unit: t("currency") %>
           </strong>
         </td>
       </tr>
