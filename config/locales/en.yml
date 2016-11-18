@@ -1,4 +1,34 @@
 en:
+  time:
+    formats:
+      date_export: "%Y%m%d%H%M"
+  categories:
+    admin:
+      index:
+        bt_new: "New"
+        bt_edit: "Edit"
+        bt_del: "Delete"
+        activities: "Activities"
+        name: "Name"
+        description: "Description"
+        category: "Category"
+        delete_success: "Delete this category successfully !"
+        delete_fail: "You cant delete this category !"
+        confirm_delete: "Are you sure ?"
+        not_found: "Category not found !"
+        products: "Categories"
+      new:
+        create_success: "Create category successfully !"
+        create_fail: "Cant create this category !"
+        bt_create: "Create"
+        create_product: "Create Category"
+        parent_category: "Parent Category"
+        no_parent: "Let blank if you create root category"
+      edit:
+        update_success: "Update category successfully !"
+        update_fail: "Cant update this category !"
+        bt_update: "Update"
+        edit_product: "Edit Category"
   products:
     admin:
       index:
@@ -16,11 +46,22 @@ en:
         delete_fail: "You cant delete this product !"
         confirm_delete: "Are you sure ?"
         not_found: "Product not found !"
+        products: "Products"
+        download_csv: "CSV"
+        download_excel: "Excel"
+        download: "Download"
+        xls: "xls"
       new:
         create_success: "Create product successfully !"
         create_fail: "Cant create this product !"
         bt_create: "Create"
         create_product: "Create Product"
+        import: "Import Product"
+        support: "We support csv,xls and xlsx file."
+        import_success: "Import products successfully !"
+        import_fail: "Cant import this file !"
+        bt_upload: "Upload"
+        please_import: "No file to import !"
       edit:
         update_success: "Update product successfully !"
         update_fail: "Cant update this product !"
@@ -71,6 +112,8 @@ en:
         nav_products: "Products"
         p_index: "Index"
         p_import: "Add/Import"
+        c_add: "Add"
+        c_index: "Index"
         nav_categories: "Categories"
         nav_statistics: "Statistics"
         nav_users: "Users"

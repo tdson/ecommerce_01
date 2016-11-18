@@ -1,0 +1,15 @@
+<div class="responsive-table ">
+  <table id="table_list" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th class = "text-left"><%= t "categories.admin.index.name" %></th>
+        <th class = "text-right"><%= t "categories.admin.index.activities" %></th>
+      <tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <ol class = "sortable_tree bootstrap" >
+    <%= sortable_tree @categories , {id: :id, title: :name} %>
+  </ol>
+</div>

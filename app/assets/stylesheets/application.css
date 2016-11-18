@@ -15,4 +15,6 @@
  *= require_self
  *= require flexslider.css
  *= require admin_lte/ltr/admin_lte
+ *= require sortable_tree
+ *= require nested_options
  */
