@@ -15,3 +15,7 @@ round_to_hundredth: 2
 empty_cart: 0
 minimum_quantity: 1
 init_quantity: 1
+no_rating: {value_rating: 0, count_rating: 0}
+zero: 0
+cookie_live: 1
+recent_products_size: 10

@@ -3054,3 +3054,27 @@ h1 {
     border: 1px solid #eee;
   }
 }
+.rating {
+  float: none;
+  width: auto;
+  display: inline;
+  margin-bottom: -18px;
+  padding: 0 10px;
+}
+.rating-stars-inline {
+  display: inline;
+}
+.product-image {
+  max-height: 300px;
+}
+.sky-form {
+  .product-thumbnail {
+    float: left;
+  }
+  .product-details {
+    margin-left: 90px;
+  }
+  .row {
+    padding: 35px 15px 15px 15px;
+  }
+}
