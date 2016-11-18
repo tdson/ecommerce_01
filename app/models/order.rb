@@ -7,6 +7,11 @@ class Order < ApplicationRecord
 
   enum status: [:pending, :done, :canceled]
 
+  validates :user, presence: true
+  validates :full_name, presence: true, length: {maximum: 128}
+  validates :shipping_address, presence: true, length: {maximum: 255}
+  validates :phone, presence: true, length: {maximum: 15}
+
   after_create :build_order_products
 
   scope :recent, ->{order created_at: :desc}

@@ -3209,3 +3209,19 @@ h1 {
 .top_left:hover {
   cursor: pointer;
 }
+.registration {
+  padding-top: 30px;
+}
+.alert-danger-2 {
+  margin-bottom: 0 !important;
+  h2 {
+    margin-top: 0;
+    font-weight: bold;
+  }
+  .heading {
+    text-align: center !important;
+  }
+}
+.wrapper {
+  min-height: 290px;
+}

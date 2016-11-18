@@ -24,10 +24,6 @@ en:
     footer:
       copyright: "2016. Design and Developed by"
       author_name: "Son Tran & Nhat Doan"
-    shared:
-      error_messages:
-        message: "The form contains"
-        error: "error"
     admin:
       base_title: "Dashboard ECommerce"
       role_0: "Admin"
@@ -168,6 +164,9 @@ en:
       send_request: "Request New Product"
       change_password: "Change email and password"
       recently_viewed: "Recently Viewed"
+    error_messages:
+      message: "The form contains"
+      error: "error"
   recently_viewed_products:
     index:
       header: "Recently Viewed Products"

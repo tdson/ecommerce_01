@@ -2,6 +2,9 @@ class OrderProduct < ApplicationRecord
   belongs_to :order
   belongs_to :product
 
+  validates :order, presence: true
+  validates :product, presence: true
+
   after_create :update_product_quantity
 
   private

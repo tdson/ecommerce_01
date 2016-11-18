@@ -6,9 +6,8 @@ class SuggestionsController < ApplicationController
   end
 
   def create
-    suggestion = current_user.suggestions.create suggestion_params
-    @suggestion = Suggestion.new
-    if suggestion.save
+    @suggestion = current_user.suggestions.create suggestion_params
+    if @suggestion.save
       flash[:success] = t ".success"
       redirect_to action: :new
     else
