@@ -1,0 +1,31 @@
+<% provide :title, t(".title") %>
+<div class="account-top heading">
+  <h3><%= t ".info_sction" %></h3>
+</div>
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages", object: @user %>
+  <div class="address">
+    <span><%= t ".name" %></span>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="address">
+    <span><%= t ".gender" %></span>
+    <%= f.select :gender, Settings.gender_val, {},
+      {class: "form-control"} %>
+  </div>
+  <div class="address">
+    <span><%= t ".phone_no" %></span>
+    <%= f.text_field :phone_number, class: "form-control" %>
+  </div>
+  <div class="address">
+    <span><%= t ".address" %></span>
+    <%= f.text_area :address, class: "form-control" %>
+  </div>
+  <div class="address">
+    <span><%= t ".chatwork_id" %></span>
+    <%= f.text_field :chatwork_id, class: "form-control" %>
+  </div>
+  <div class="address text-center">
+    <%= f.submit t(".btn_submit") %>
+  </div>
+<% end %>

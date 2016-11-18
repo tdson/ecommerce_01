@@ -1,0 +1,30 @@
+<% provide :title, t(".title") %>
+<div class="account">
+  <div class="container">
+    <div class="account-bottom">
+      <div class="col-md-4">
+        <%= render "shared/left_panel" %>
+      </div>
+      <div class="col-md-8 account-left">
+        <div class="orders-section">
+          <div class="account-top heading">
+            <h3><%= t ".header" %></h3>
+          </div>
+          <div class="suggestion-form">
+            <%= form_for @suggestion do |f| %>
+              <%= render "shared/error_messages", object: @suggestion %>
+              <div class="address">
+                <span><%= t ".label" %></span>
+                <%= f.text_area :content, class: "form-control sgg-textarea" %>
+              </div>
+              <div class="address text-center">
+                <%= f.submit t(".btn_submit") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
