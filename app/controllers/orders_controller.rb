@@ -22,6 +22,8 @@ class OrdersController < ApplicationController
       order_full = Order.includes(:user, order_products: :product)
         .find @order.id
       ModelMailer.new_order_created(order_full).deliver
+      cw_message = t ".cw_msg", user: current_user.name, url: order_url(@order)
+      send_chatwork_message cw_message
 
       flash[:success] = t ".success"
       redirect_to root_path

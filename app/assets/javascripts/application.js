@@ -21,4 +21,4 @@
 //= require chat.js
 //= require social-share-button
 //= require jquery.autosize
-//= require turbolinks
+//= require social-share-button

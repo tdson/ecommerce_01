@@ -112,6 +112,7 @@ en:
     create:
       success: "Your order has been created!"
       fails: "Opps... something went wrong, cannot create order, try later."
+      cw_msg: "%{user} created a new order:\n%{url}"
     order:
       name: "Order #%{id}"
     index:
@@ -120,6 +121,7 @@ en:
       status: "Status"
       header: "Order History"
       title: "Order History"
+      cw_msg: "%{user} created a new order:\n %{url}"
   model_mailer:
     new_order_created:
       subject: "Order Receipt"
