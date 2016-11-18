@@ -2,6 +2,7 @@ en:
   currency: "$"
   breadcrumb:
     home: "Home"
+    cart: "Shopping cart"
   layouts:
     application:
       base_title: "FraMarket"
@@ -14,6 +15,10 @@ en:
       sign_in: "Sign In"
       sign_up: "Sign Up"
       sign_out: "Sign out"
+    cart:
+      empty: "Empty"
+      items: "item"
+      cart: "Shopping Cart"
     footer:
       copyright: "2016. Design and Developed by"
       author_name: "Son Tran & Nhat Doan"
@@ -63,3 +68,23 @@ en:
       details: "Details"
       all: "All"
       dollar: "$"
+  carts:
+    not_enough: "Sorry, there are only %{qty} remaining."
+    added: "Successfully added."
+    index:
+      lb_product: "Product"
+      lb_price: "Unit Price"
+      lb_qty: "Quantity"
+      options: "Options"
+      total: "Total:"
+      currency: "VND"
+      link_rm: "Remove"
+      btn_cancel: "Empty the cart"
+      btn_proceed: "Proceed to checkout"
+      title: "(%{qty}) Cart"
+      title_empty: "Cart"
+  admin:
+    base_title: "Dashboard ECommerce"
+    role_0: "Admin"
+    role_1: "Mod"
+    role_2: "Member"

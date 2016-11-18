@@ -3006,3 +3006,51 @@ h1 {
 .social-share-button {
   display: inline;
 }
+.lb-total {
+  margin-top: 0;
+  font-size: 20px;
+}
+.lb-cost {
+  font-size: 25px;
+  font-weight: bold;
+  color: red;
+}
+.btn-proceed {
+  display: block;
+  width: 100%;
+}
+.top_left {
+  ul,
+  ol {
+    margin-top: 0;
+  }
+}
+.head-t {
+  padding: 0;
+}
+.top_left {
+  ul {
+    margin-bottom: 0;
+  }
+}
+#cart-icon:hover {
+  cursor: pointer;
+}
+.product-thumbnail {
+  max-width: 100px;
+  max-height: 80px;
+  margin-right: 10px;
+}
+#cart-table {
+  td {
+    vertical-align: middle;
+  }
+}
+.wrapper {
+  .btn-trash {
+    margin-bottom: 10px;
+  }
+  .table {
+    border: 1px solid #eee;
+  }
+}

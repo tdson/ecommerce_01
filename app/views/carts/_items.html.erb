@@ -1,0 +1,21 @@
+<% @products.each do |product, quantity| %>
+  <% if product %>
+    <tr>
+      <td>
+        <%= link_to product do %>
+          <%= image_tag product.image, alt: product.name,
+            class: "product-thumbnail" %>
+          <%= product.name %>
+        <% end %>
+      </td>
+      <td><%= quantity %></td>
+      <td><%= number_to_currency product.price, unit: t("currency") %></td>
+      <td>
+        <%= link_to cart_path(product.id), method: :delete do %>
+          <i class="fa fa-trash"></i>
+          <%= t "carts.index.link_rm" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+<% end %>

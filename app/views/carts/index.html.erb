@@ -1,0 +1,47 @@
+<% provide :title, cart_page_title %>
+<ul class="breadcrumb">
+  <li><%= link_to t("breadcrumb.home"), root_path %></li>
+  <li><%= t "breadcrumb.cart" %></li>
+</ul>
+<div class="wrapper">
+  <div class="col-md-12">
+    <%= link_to new_cart_path,
+      class: "btn btn-danger btn-sm btn-flat btn-trash" do %>
+      <i class="fa fa-trash"></i>
+      <%= t(".btn_cancel") %>
+    <% end %>
+  </div>
+  <div class="col-md-9">
+    <table class="table table-hover" id="cart-table">
+      <thead>
+        <th><%= t ".lb_product" %></th>
+        <th><%= t ".lb_qty" %></th>
+        <th><%= t ".lb_price" %></th>
+        <th><%= t ".options" %></th>
+      </thead>
+      <tbody>
+        <% if @products.any? %>
+          <%= render "items" %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-3">
+    <div class="sumany">
+      <div class="row">
+        <span class="lb-total"><%= t ".total" %></span>
+        <span class="pull-right">
+          <span class="lb-cost">
+            <%= number_to_currency cart_total_cost(@products),
+              unit: t("currency") %>
+          </span>
+        </span>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <%= link_to t(".btn_proceed"), new_order_path,
+        class: "btn btn-primary btn-proceed btn-flat" %>
+    </div>
+  </div>
+</div>

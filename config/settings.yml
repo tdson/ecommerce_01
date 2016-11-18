@@ -12,3 +12,6 @@ sold_out: 0
 file_path_404: "/public/404.html"
 http_status: {not_found: 404}
 round_to_hundredth: 2
+empty_cart: 0
+minimum_quantity: 1
+init_quantity: 1
