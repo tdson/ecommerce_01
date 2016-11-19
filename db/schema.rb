@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161111125715) do
     t.integer  "current_price"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.datetime "deleted_at"
     t.index ["order_id"], name: "index_order_products_on_order_id", using: :btree
     t.index ["product_id"], name: "index_order_products_on_product_id", using: :btree
   end
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161111125715) do
     t.string   "full_name"
     t.string   "shipping_address"
     t.string   "phone"
+    t.datetime "deleted_at"
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 

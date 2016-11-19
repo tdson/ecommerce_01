@@ -1,0 +1,35 @@
+<div class="row">
+  <%= form_tag admin_orders_path(status: params[:status]), method: :get,
+    id: "admin_search" do %>
+    <%= render "admin/shared/search_form" %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".header" %></h3>
+      </div>
+      <div class="box-body chart-responsive">
+        <table class="table table-hover" id="order-table">
+          <thead>
+            <th><%= t ".th_order_id" %></th>
+            <th><%= t ".th_user" %></th>
+            <th><%= t ".th_address" %></th>
+            <th><%= t ".th_time" %></th>
+            <th><%= t ".th_status" %></th>
+            <th><%= t ".th_action" %></th>
+          </thead>
+          <% if @orders.any? %>
+            <tbody id="search-result">
+              <%= render @orders %>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+      <div class="pull-right" id="pagination">
+        <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+      </div>
+    </div>
+  </div>
+</div>

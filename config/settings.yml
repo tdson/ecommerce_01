@@ -8,9 +8,8 @@ product_default: "default_production.png"
 fb_sharer: "https://www.facebook.com/sharer/sharer.php?u="
 class_default: "default"
 class_danger: "danger"
-sold_out: 0
 file_path_404: "/public/404.html"
-http_status: {not_found: 404}
+http_status: {success: 200, bad_request: 400, not_found: 404}
 round_to_hundredth: 2
 empty_cart: 0
 minimum_quantity: 1
@@ -27,3 +26,7 @@ order_status_in_word: {pending: "pending", done: "done", canceled: "canceled"}
 id_chatwork_group: 61067695
 date_range: {one_week: 7, one_month: 30}
 top_product: 10
+order_per_page: 20
+line_break: "<br/>"
+js_line_break: "/n"
+sold_out: 0

@@ -3223,12 +3223,40 @@ h1 {
   }
 }
 .wrapper {
-  min-height: 290px;
+  min-height: 290px !important;
   padding: 0;
 }
 .date-range {
   margin-bottom: 20px;
   #range {
     width: auto;
+  }
+}
+.search-field {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+.quantity-f {
+  width: 80px;
+  max-width: 80px;
+}
+#cart-table {
+  .quantity-f {
+    float: left;
+  }
+  .link-update {
+    padding: 0 5px 0 10px;
+    cursor: pointer;
+    height: 34px;
+  }
+}
+#new_order {
+  .setup-content {
+    min-height: 400px;
+  }
+}
+.box-body {
+  .btn-trash {
+    margin-bottom: 10px;
   }
 }

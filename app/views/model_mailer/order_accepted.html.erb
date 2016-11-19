@@ -1,8 +1,9 @@
 <h1><%= t ".header" %></h1>
 
 <p><%= t ".greeting", name: @order.user.name %></p>
+<p><%= t(".mgs_thank_you").html_safe %></p>
 <p>
-  <%= t(".mgs_thank_you").html_safe %>
+  <%= t(".msg_info").html_safe %>
   <%= order_url @order.id %>
 </p>
 <p>

@@ -3,6 +3,9 @@ class OrdersController < ApplicationController
   before_action :check_cart, only: [:new, :create]
   before_action :load_user, only: :index
   before_action :verify_user, only: :index
+  before_action :load_order, only: :update
+  before_action :check_cancelable, only: :update
+  before_action :update_product_quantity, only: :update
 
   def index
     @orders = @user.orders.recent
@@ -20,17 +23,27 @@ class OrdersController < ApplicationController
     if @order.save
       session[:cart] = nil
       order_full = Order.includes(:user, order_products: :product)
-        .find @order.id
-      ModelMailer.new_order_created(order_full).deliver
-      cw_message = t ".cw_msg", user: current_user.name, url: order_url(@order)
-      send_chatwork_message cw_message
-
+        .find_by_id @order.id
+      if order_full
+        ModelMailer.new_order_created(order_full).deliver
+      else
+        flash[:warning] = t ".warning"
+      end
       flash[:success] = t ".success"
       redirect_to root_path
     else
       flash[:danger] = t ".fails"
       render :new
     end
+  end
+
+  def update
+    if @order.update_attribute :status, Settings.order_status[:canceled]
+      flash[:success] = t ".success"
+    else
+      flash[:danger] = t ".fails"
+    end
+    redirect_to :back || root_path
   end
 
   private
@@ -46,15 +59,32 @@ class OrdersController < ApplicationController
     end
   end
 
-  def send_receipt_to_mail
-    order = Order.includes(:user, :order_products).find self.id
-    ModelMailer.new_order_created(order).deliver
+  def load_order
+    @order = Order.find_by_id params[:id]
+    unless @order
+      flash[:danger] = t "orders.load_fails"
+      redirect_to root_path
+    end
+  end
+
+  def check_cancelable
+    unless @order.is_pending?
+      flash[:warning] = t "orders.update.cannot_cancel"
+      redirect_to :back || root_path
+    end
   end
 
   def load_user
     @user = User.find_by_id params[:user_id]
     unless @user
       flash[:danger] = t "orders.user_not_found"
+      redirect_to :back || root_path
+    end
+  end
+
+  def update_product_quantity
+    unless @order.give_product_back
+      flash[:danger] = t "orders.update.cancel_fails"
       redirect_to :back || root_path
     end
   end

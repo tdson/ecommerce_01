@@ -21,4 +21,9 @@ class Product < ApplicationRecord
   def sold_out?
     self.quantity < Settings.minimum_quantity
   end
+
+  def update_quantity amount
+    self.quantity += amount
+    self.save
+  end
 end
