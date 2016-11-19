@@ -3224,4 +3224,11 @@ h1 {
 }
 .wrapper {
   min-height: 290px;
+  padding: 0;
+}
+.date-range {
+  margin-bottom: 20px;
+  #range {
+    width: auto;
+  }
 }

@@ -41,6 +41,7 @@ gem "admin_lte-rails"
 gem "social-share-button"
 gem "autosize-rails"
 gem "chatwork"
+gem "chartkick"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"

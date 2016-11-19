@@ -15,6 +15,15 @@ class Order < ApplicationRecord
   after_create :build_order_products
 
   scope :recent, ->{order created_at: :desc}
+  scope :quantity_within, ->range do
+    left_outer_joins(:order_products)
+      .select("DATE(orders.created_at) AS `date`,
+        COUNT(order_products.id) AS `quantity`")
+      .where("DATE(orders.created_at) >=
+        '#{Settings.date_range[range].days.ago}'")
+      .group("`date`")
+      .order "`date`"
+  end
 
   class << self
     def set_session_cart cart

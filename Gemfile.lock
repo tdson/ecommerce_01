@@ -76,6 +76,7 @@ GEM
       mimemagic (>= 0.3.0)
     chart-js-rails (0.1.0)
       railties (> 3.1)
+    chartkick (2.1.1)
     chatwork (0.3.1)
       faraday (~> 0.9.0)
     coderay (1.1.1)
@@ -368,6 +369,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.6)
   byebug (= 9.0.0)
   carrierwave (= 0.11.2)
+  chartkick
   chatwork
   coffee-rails (= 4.2.1)
   config (~> 1.3)

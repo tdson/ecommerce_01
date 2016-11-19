@@ -22,3 +22,5 @@
 //= require social-share-button
 //= require jquery.autosize
 //= require social-share-button
+//= require Chart.bundle
+//= require chartkick

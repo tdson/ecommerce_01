@@ -179,3 +179,10 @@ en:
       btn_submit: "Submit"
     create:
       success: "Thank you for your contribution!"
+  admin:
+    statistics:
+      range_7_days: "Last 7 days"
+      range_30_days: "Last 30 days"
+      index:
+        stat_orders: "Order chart"
+        stat_product: "Top 10 products"

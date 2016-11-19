@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $('.status').on('click', '.rating-stars', function() {
-    console.log('click');
     rating_val = $(this).val();
     product_id = $(this).parent().parent().next("input#product_id").val();
 

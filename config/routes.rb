@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root "statistics#index"
+    resources :statistics, only: :index
+  end
+
   root "products#index"
   resources :products, only: [:show, :index] do
     resources :ratings, only: :create
