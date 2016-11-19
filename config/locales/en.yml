@@ -248,3 +248,18 @@ en:
       destroy:
         success: "Product has been removed!"
         fails: "Opps... cannot remove this product right now!"
+    suggestions:
+      index:
+        title: "Suggestions"
+        id: "ID"
+        content: "Content"
+        user: "User"
+        time: "Time"
+        status: "Status"
+        option: "Options"
+      update:
+        success: "Marked as read!"
+        fails: "Update fails!"
+      destroy:
+        success: "Deteted successfully!"
+        fails: "Delete fails!"

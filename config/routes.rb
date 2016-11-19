@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :statistics, only: :index
     resources :orders, except: [:new, :create]
     resources :order_products, only: [:update, :destroy]
+    resources :suggestions, only: [:index, :update, :destroy]
   end
 
   root "products#index"

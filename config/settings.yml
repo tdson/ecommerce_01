@@ -30,3 +30,4 @@ order_per_page: 20
 line_break: "<br/>"
 js_line_break: "/n"
 sold_out: 0
+suggestion_per_page: 20

@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111125715) do
+ActiveRecord::Schema.define(version: 20161119113415) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "lft"
-    t.integer  "rgt"
+    t.integer  "left_node"
+    t.integer  "right_node"
     t.integer  "depth"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "children_count", default: 0, null: false
-    t.integer  "parent_id",      default: 0, null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "order_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -74,8 +72,9 @@ ActiveRecord::Schema.define(version: 20161111125715) do
   create_table "suggestions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_read",    default: false
     t.index ["user_id"], name: "index_suggestions_on_user_id", using: :btree
   end
 
