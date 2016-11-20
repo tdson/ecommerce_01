@@ -22,12 +22,12 @@ class Order < ApplicationRecord
   scope :recent, ->{order created_at: :desc}
   scope :quantity_within, ->range do
     left_outer_joins(:order_products)
-      .select("DATE(orders.created_at) AS `date`,
-        COUNT(order_products.id) AS `quantity`")
+      .select("DATE(orders.created_at) AS date,
+        COUNT(order_products.id) AS quantity")
       .where("DATE(orders.created_at) >=
         '#{Settings.date_range[range].days.ago}'")
-      .group("`date`")
-      .order "`date`"
+      .group("date")
+      .order "date"
   end
   scope :with_status, ->status {where status: status if status.present?}
   scope :sort_by_recently, ->{order created_at: :desc}

@@ -67,6 +67,7 @@ end
 
 group :production do
   gem "pg", "0.18.4"
+  gem "mysql2",  ">= 0.3.18", "< 0.5"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
