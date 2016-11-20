@@ -31,3 +31,5 @@ line_break: "<br/>"
 js_line_break: "/n"
 sold_out: 0
 suggestion_per_page: 20
+user_per_page: 20
+roles: {admin: "admin", mod: "mod", member: "member"}

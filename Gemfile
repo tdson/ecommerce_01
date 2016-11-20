@@ -43,6 +43,7 @@ gem "autosize-rails"
 gem "chatwork"
 gem "chartkick"
 gem "bootstrap-switch-rails", "~> 3.3", ">= 3.3.3"
+gem "cancancan", "~> 1.10"
 
 group :development, :test do
   gem "mysql2",  ">= 0.3.18", "< 0.5"

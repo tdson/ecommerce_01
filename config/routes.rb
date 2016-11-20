@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root "statistics#index"
+    root "orders#index", status: Settings.order_status[:pending]
     resources :statistics, only: :index
     resources :orders, except: [:new, :create]
     resources :order_products, only: [:update, :destroy]
     resources :suggestions, only: [:index, :update, :destroy]
+    resources :users, only: [:index, :destroy]
   end
 
   root "products#index"

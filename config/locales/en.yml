@@ -21,6 +21,7 @@ en:
       sign_up: "Sign Up"
       sign_out: "Sign out"
       greeting_txt: "Welcome, %{name}"
+      dashboard: "Dash Board"
     cart:
       empty: "Empty"
       items: "item"
@@ -40,6 +41,7 @@ en:
         logo_sm: "ECom"
         toggle_navigation: "Toggle navigation"
         link_sign_out: "Sign out"
+        home: "HOME"
       left_sidebar:
         main_nav: "main navigation"
         nav_orders: "Orders"
@@ -209,7 +211,7 @@ en:
     orders:
       load_fails: "Order not found!"
       index:
-        header: "Pending orders"
+        header: "Orders List"
         th_order_id: "Order ID"
         th_user: "Owner"
         th_address: "Address"
@@ -251,6 +253,7 @@ en:
     suggestions:
       index:
         title: "Suggestions"
+        header: "Suggestions List"
         id: "ID"
         content: "Content"
         user: "User"
@@ -263,3 +266,17 @@ en:
       destroy:
         success: "Deteted successfully!"
         fails: "Delete fails!"
+    users:
+      load_fails: "User not found!"
+      index:
+        title: "User List"
+        title: "Users"
+        id: "ID"
+        name: "Name"
+        email: "Email"
+        role: "Role"
+        time: "Join date"
+        options: "Options"
+      destroy:
+        success: "User has been deleted!"
+        fails: "Deleted fails!"

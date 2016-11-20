@@ -9,6 +9,12 @@
               <%= link_to t(".greeting_txt", name: current_user.name),
                 user_orders_path(current_user) %>
             </li>
+            <% if current_user.is_admin_or_mod? %>
+              <li>
+                <%= link_to t(".dashboard"),
+                  admin_root_path %>
+              </li>
+            <% end %>
             <li>
               <%= link_to t(".sign_out"), destroy_user_session_path,
                 method: :delete %>

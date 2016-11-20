@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :count_cart_size
   helper_method [:recent_products, :last_viewed_product]
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:danger] = exception.message
+    redirect_to current_user.is_admin_or_mod? ? admin_root_url : root_url
+  end
+
   def recent_products
     @recent_products ||= RecentProducts.new cookies
   end
