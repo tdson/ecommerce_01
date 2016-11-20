@@ -1,0 +1,29 @@
+<% @order.order_products.each do |item| %>
+  <% if item %>
+    <tr>
+      <td>
+        <strong>
+          <%= link_to product_path item.product_id do %>
+            <%= image_tag item.product.image, alt: item.product.name,
+              class: "product-thumbnail" %>
+            <%= item.product.name %>
+          <% end %>
+        </strong>
+      </td>
+      <td class="text-right"><%= item.quantity %></td>
+      <td class="text-right">
+        <%= number_to_currency item.current_price, unit: t("currency") %>
+      </td>
+    </tr>
+  <% end %>
+<% end %>
+<tr>
+  <td></td>
+  <td></td>
+  <td class="text-right">
+    <%= t ".total" %>
+    <strong class="text-danger">
+      <%= number_to_currency @order.total_cost, unit: t("currency") %>
+    </strong>
+  </td>
+</tr>

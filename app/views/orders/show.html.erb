@@ -1,0 +1,62 @@
+<% provide :title, t(".title", id: @order.id) %>
+<ul class="breadcrumb">
+  <li><%= link_to t("breadcrumb.home"), root_path %></li>
+  <li><%= link_to t("breadcrumb.order"), user_orders_path(current_user) %></li>
+  <li>
+    <strong><%= t ".title", id: @order.id %></strong>
+  </li>
+</ul>
+<div class="wrapper">
+  <div class="col-md-12 text-center">
+    <h4>
+      <%= t ".title", id: @order.id %>
+      <span class="label label-sm
+        label-<%= Settings.order_status_classes[@order.status] %>">
+        <%= @order.status %>
+      </span>
+    </h4>
+    <hr>
+  </div>
+  <div class="col-md-12">
+    <% if @order.is_pending? %>
+      <%= link_to order_path(@order), method: :patch,
+        class: "btn btn-warning btn-sm btn-flat btn-trash",
+        data: {confirm: t("admin.delete_confirmation")} do %>
+        <i class="fa fa-times-circle"></i>
+        <%= t(".btn_cancel") %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <table class="table table-striped" id="cart-table">
+      <thead>
+        <th class="text-center"><%= t ".lb_product" %></th>
+        <th class="text-center"><%= t ".lb_qty" %></th>
+        <th class="text-center"><%= t ".lb_price" %></th>
+      </thead>
+      <tbody>
+        <%= render "order_products" %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-4">
+    <div class="order_info">
+      <div class="form-group">
+        <%= label_tag :full_name, t(".lb_full_name") %>
+        <%= text_field_tag :full_name, @order.full_name,
+          {class: "form-control", disabled: true} %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :phone, t(".lb_phone") %>
+        <%= text_field_tag :phone, @order.phone,
+          {class: "form-control", disabled: true} %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :shipping_address, t(".lb_address") %>
+        <%= text_area_tag :shipping_address, @order.shipping_address,
+          {class: "form-control", disabled: true} %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -37,6 +37,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.includes(order_products: :product).find_by_id params[:id]
+  end
+
   def update
     if @order.update_attribute :status, Settings.order_status[:canceled]
       flash[:success] = t ".success"
@@ -90,7 +94,7 @@ class OrdersController < ApplicationController
   end
 
   def verify_user
-    unless current_user.is_user? @user
+    unless current_user.is_user?(@user) || current_user.is_admin_or_mod?
       redirect_to :back || user_orders_url(current_user)
     end
   end

@@ -10,6 +10,7 @@ en:
   breadcrumb:
     home: "Home"
     cart: "Shopping cart"
+    order: "Orders"
   layouts:
     application:
       base_title: "FraMarket"
@@ -129,6 +130,22 @@ en:
       header: "Order History"
       title: "Order History"
       cw_msg: "%{user} created a new order:\n %{url}"
+    show:
+      btn_cancel: "Cancel this order"
+      lb_product: "Product"
+      lb_price: "Unit Price"
+      lb_qty: "Quantity"
+      total: "Total:"
+      title: "Order #%{id}"
+
+      lb_full_name: "Full name"
+      lb_phone: "Phone number"
+      lb_address: "Shipping address"
+      lb_method: "Payment method"
+      
+    order_products:
+      total: "Total:"
+
   model_mailer:
     new_order_created:
       subject: "Order Bill"
