@@ -92,6 +92,7 @@ en:
     last_viewed:
       header: "Last viewed"
       link_all: "View all"
+      empty: "no data"
   orders:
     empty_cart: "Cart is empty, add product to cart to continue."
     user_not_found: "User not found!"

@@ -1,20 +1,24 @@
 <section class="sky-form">
   <h4><%= t ".header" %></h4>
   <div class="row1 scroll-pane">
-    <div class="col col-4">
-      <%= link_to last_viewed_product do %>
-        <%= image_tag last_viewed_product.image, alt: last_viewed_product.name,
-          class: "product-thumbnail" %>
-        <div class="product-details">
-          <h3><%= last_viewed_product.name.titleize %></h3>
-          <strong>
-            <%= number_to_currency last_viewed_product.price, unit: t("currency") %>
-          </strong>
+    <% if last_viewed_product %>
+      <div class="col col-4">
+        <%= link_to last_viewed_product do %>
+          <%= image_tag last_viewed_product.image, alt: last_viewed_product.name,
+            class: "product-thumbnail" %>
+          <div class="product-details">
+            <h3><%= last_viewed_product.name.titleize %></h3>
+            <strong>
+              <%= number_to_currency last_viewed_product.price, unit: t("currency") %>
+            </strong>
+          </div>
+        <% end %>
+        <div class="row pull-right">
+          <%= link_to t(".link_all"), recently_viewed_products_path %>
         </div>
-      <% end %>
-      <div class="row pull-right">
-        <%= link_to t(".link_all"), recently_viewed_products_path %>
       </div>
-    </div>
+    <% else %>
+      <i><%= t ".empty" %></i>
+    <% end %>
   </div>
 </section>

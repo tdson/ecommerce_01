@@ -11,8 +11,10 @@ class User < ApplicationRecord
 
   enum role: [:admin, :mod, :member]
 
-  validates :name, presence: true, length: {minimum: 2, maximum: 128}
-  validates :email, presence: true, if: ->{self.provider.blank?}
+  validates :name, presence: true, length: {minimum: 2, maximum: 128},
+    allow_nil: true
+  validates :email, presence: true, if: ->{self.provider.blank?},
+    uniqueness: true
   validates :password, length: {minimum: 6}, presence: true, allow_nil: true
   validates :address, length: {maximum: 255}
   validates :phone_number, length: {maximum: 15}
