@@ -17,6 +17,19 @@ class Product < ApplicationRecord
       .order("quantity desc")
       .limit limit
   end
+  scope :top_new, ->limit do
+    order(created_at: :desc)
+      .limit limit
+  end
+  scope :hot_trend, ->date_range, limit do
+    select("products.id, products.name, products.price, products.image")
+      .joins(:order_products)
+      .where("order_products.created_at >= '#{date_range.month.ago}'")
+      .group("products.id")
+      .order("COUNT(order_products.id) DESC")
+      .limit limit
+  end
+  scope :search, ->q {where "products.name LIKE '%#{q}%'" if q.present?}
 
   def sold_out?
     self.quantity < Settings.minimum_quantity

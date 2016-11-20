@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 
 module Ecommerce01
   class Application < Rails::Application
-    config.autoload_paths << Rails.root.join("lib/cookie_products")
-    config.autoload_paths << Rails.root.join("lib/statistics")
+    config.eager_load_paths += %W(#{config.root}/lib/cookie_products)
+    config.eager_load_paths += %W(#{config.root}/lib/statistics)
   end
 end

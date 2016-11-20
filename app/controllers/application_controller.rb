@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def last_viewed_product
-    @recent_products.reverse.second
+    recent_products.reverse.second
   end
 
   protected

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
   end
 
-  root "products#index"
+  root "home#index"
   resources :products, only: [:show, :index] do
     resources :ratings, only: :create
   end

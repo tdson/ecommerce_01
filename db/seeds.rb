@@ -41,12 +41,13 @@ end
   5.times do |n|
     category.products.create! name: "product #{category.name} #{n}",
       description: Faker::Lorem.sentence(20),
-      price: rand(1..90) * 100,
+      price: rand(1..1000),
       quantity: rand(1..99)
   end
 end
 
 # Orders
+=begin
 10.times do |n|
   order = Order.create! user_id: rand(1..5), status: rand(0..2)
   products = Product.order("RAND()").take(rand(2..5))
@@ -56,3 +57,4 @@ end
       current_price: product.price
   end
 end
+=end
