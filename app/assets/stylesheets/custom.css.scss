@@ -3308,3 +3308,28 @@ input:checked + .slider:before {
   width: 50%;
   max-width: 45%;
 }
+.products {
+  .section-title {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-bottom: 1px solid #252525;
+  }
+  h3 {
+    font-size: 20px;
+    display: inline-block;
+    background: #252525;
+    padding: 10px;
+    margin-bottom: 0;
+    color: #fff;
+  }
+}
+.last-viewed-widget {
+  padding-top: 40px;
+}
+.search-bar-header {
+  width: 30%;
+  margin: 50px auto 0 5%;
+  #q {
+    font-size: 15px;
+  }
+}

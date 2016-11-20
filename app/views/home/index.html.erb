@@ -1,0 +1,23 @@
+<div class="col-md-8">
+  <div class="products" id="product-results">
+    <div class="products-grid-left">
+      <div class="section-title">
+        <h3><%= t ".label_hot_trend" %></h3>
+      </div>
+      <div class="products-grid-lft">
+        <%= render @hot_trend_products, partial: "products/product" %>
+      </div>
+    </div>
+    <div class="products-grid-left">
+      <div class="section-title">
+        <h3><%= t ".label_new_product" %></h3>
+      </div>
+      <div class="products-grid-lft">
+        <%= render @new_products, partial: "products/product" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 last-viewed-widget">
+  <%= render "products/last_viewed" %>
+</div>

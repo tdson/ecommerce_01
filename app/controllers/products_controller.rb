@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :load_product_rating, only: :show
 
   def index
-    @products = Product.recent.page(params[:page])
+    @products = Product.search(params[:q]).recent.page(params[:page])
       .per Settings.products_per_page
   end
 

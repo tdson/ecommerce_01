@@ -23,6 +23,7 @@ en:
       sign_out: "Sign out"
       greeting_txt: "Welcome, %{name}"
       dashboard: "Dash Board"
+      search_holder: "Search..."
     cart:
       empty: "Empty"
       items: "item"
@@ -142,7 +143,7 @@ en:
       lb_phone: "Phone number"
       lb_address: "Shipping address"
       lb_method: "Payment method"
-      
+
     order_products:
       total: "Total:"
 
@@ -297,3 +298,7 @@ en:
       destroy:
         success: "User has been deleted!"
         fails: "Deleted fails!"
+  home:
+    index:
+      label_hot_trend: "Hot trend products"
+      label_new_product: "New products"

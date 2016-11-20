@@ -33,3 +33,5 @@ sold_out: 0
 suggestion_per_page: 20
 user_per_page: 20
 roles: {admin: "admin", mod: "mod", member: "member"}
+top_new_limit: 6
+hot_trend_limit: 6
