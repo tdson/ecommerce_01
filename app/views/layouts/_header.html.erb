@@ -43,25 +43,17 @@
       </div>
       <ul class="megamenu skyblue">
         <li class="active grid">
-          <%= link_to t(".link_home"), "#", class: "color1" %>
+          <%= link_to t(".link_home"), @products_path, class: "color1" %>
         </li>
-        <% nested_set_options(@categories) do |category, index| %>
-          <li class="grid">
-              <% if category.root? %>
-            <%= link_to category.name, "#", class: "color2" %>
-            <div class="megapanel">
-              <div class="row">
-                <%end%>
-                <div class="col1">
-                    <div class="h_nav">
-                    </div>
-                </div>
-              <% if index == (@categories).size-1 %>
-              </div>
-              </div>
-              <% end %>
-          </li>
-        <% end %>
+        <li class="color2">
+          <%= link_to t(".link_product"),@products_path, class: "color2" %>
+        </li>
+        <li class="color2">
+          <%= link_to t(".link_suggestion"), new_suggestion_path, class: "color2" %>
+        </li>
+        <li class="color2">
+          <%= link_to t(".link_about"), "#", class: "color2" %>
+        </li>
       </ul>
     </div>
   </div>

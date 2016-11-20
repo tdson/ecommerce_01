@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :order_products, dependent: :destroy
   has_many :orders, through: :order_products
   has_many :ratings, dependent: :destroy
+  has_many :ratings, -> {order :rating}
 
   validates :price, numericality: true, allow_nil: true
   validates :quantity, numericality: true, allow_nil: true
@@ -11,6 +12,19 @@ class Product < ApplicationRecord
   scope :recent, ->{order created_at: :DESC}
   scope :alphabet, ->{order :name}
   mount_uploader :image, ProductImageUploader
+
+  scope :search_product_or_category, ->(q) do
+    joins(:category)
+      .where "products.name LIKE :query OR categories.name LIKE :query",
+        query: "%#{search}%" if q.present?
+  end
+
+  scope :of_category, ->category_id do
+    where category_id: category_id if category_id.present?
+  end
+
+  scope :price_decrease, ->{order price: :DESC}
+  scope :price_increase, ->{order price: :ASC}
 
   def self.import(file)
     spreadsheet = open_spreadsheet(file)

@@ -2,6 +2,12 @@ en:
   time:
     formats:
       date_export: "%Y%m%d%H%M"
+  suggestions:
+    create_success: "Create suggestion successfully !"
+    suggest_form: "Suggest Form"
+    welcome: "Hello "
+    suggest_us: ", send us your suggestions"
+    submit: "Submit"
   categories:
     admin:
       index:
@@ -73,13 +79,24 @@ en:
       details: "Details"
       all: "All"
       dollar: "$"
+      category: "Filter by category"
+      price: "Filter by price"
+      max: "Max"
+      min: "Min"
+      rating: "Filter by rating"
+      holder: "Search product or category..."
+      btn_submit: "Submit"
+      get_all: "All category"
+      search: "Search"
   layouts:
     application:
       base_title: "FraMarket"
     header:
       logo_alt: "FraMarket"
       link_home: "Home"
-      link_product: "Product"
+      link_product: "Products"
+      link_suggestion: "Suggestion"
+      link_about: "About"
       empty_cart: "Empty Cart"
       items: "Items"
       sign_in: "Sign In"

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="container">
+    <div class="col-lg-2"></div>
+    <div class="col-md-8">
+      <div class="col-lg-offset-2 col-md-8">
+      </br>
+        <h1 class="text-center">
+          <b><%= t "suggestions.suggest_form" %></b>
+        </h1>
+        <div>
+          <%= t "suggestions.welcome" %>
+          <%= current_user.name %>
+          <%= t "suggestions.suggest_us" %>
+        </div>
+      </br>
+        <%= form_for @suggestion do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <div class="form-group">
+          <%= f.label :content %>
+          <%= f.text_area :content, class: "form-control" %>
+          <br/>
+          <div class="text-center">
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.submit t("suggestions.submit"), class: "btn btn-primary" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
