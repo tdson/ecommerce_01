@@ -18,7 +18,6 @@ rerun.txt
 pickle-email-*.html
 .project
 /config/database.yml
-/public/uploads
 config/settings.local.yml
 config/settings/*.local.yml
 config/settings/test.yml
@@ -27,10 +26,8 @@ config/environments/*.local.yml
 /.idea
 app/assets/javascripts/i18n/translations.js
 # Ignore application configuration
-/config/application.yml
 
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 .byebug_history
-app/assets/javascripts/fb_plugin.js
