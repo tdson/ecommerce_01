@@ -1,0 +1,40 @@
+<div class="row">
+  <section class="col-md-12 date-range">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
+      <%= select_tag :range,
+        options_for_select(Statistic.range, params[:category_statistic]),
+        class: "form-control" %>
+    </div>
+  </section>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".stat_orders" %></h3>
+      </div>
+      <div class="box-body chart-responsive">
+        <div class="chart line-chart">
+          <%= render "order_line_chart" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="x_panel">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title"><%= t ".stat_product" %></h3>
+        </div>
+        <div class="box-body chart-responsive">
+          <div class="chart bar-chart">
+            <%= render "product_bar_chart" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

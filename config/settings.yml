@@ -19,3 +19,11 @@ no_rating: {value_rating: 0, count_rating: 0}
 zero: 0
 cookie_live: 1
 recent_products_size: 10
+class_active: "active"
+gender_val: {"Male": true, "Female": false}
+order_status_classes: {pending: "danger", done: "primary", canceled: "default"}
+order_status: {pending: 0, done: 1, canceled: 2}
+order_status_in_word: {pending: "pending", done: "done", canceled: "canceled"}
+id_chatwork_group: 61067695
+date_range: {one_week: 7, one_month: 30}
+top_product: 10

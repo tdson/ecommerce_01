@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require jquery.easing
 //= require jquery.flexslider-min
@@ -20,3 +20,7 @@
 //= require admin_lte/admin_lte
 //= require chat.js
 //= require social-share-button
+//= require jquery.autosize
+//= require social-share-button
+//= require Chart.bundle
+//= require chartkick

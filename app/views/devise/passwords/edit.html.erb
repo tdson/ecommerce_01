@@ -1,28 +1,33 @@
-<h2><%= t ".header" %></h2>
-
-<%= form_for resource, as: resource_name, url: password_path(resource_name),
-  html: {method: :put} do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, t(".lb_new_pass") %><br />
-    <% if @minimum_password_length %>
-      <em>
-        <%= t ".msg_length_min", number: @minimum_password_length %>
-      </em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+<div class="account registration">
+  <div class="container">
+    <div class="account-bottom">
+      <div class="col-md-4 col-md-offset-4">
+        <h2 class="text-center"><%= t ".header" %></h2>
+        <%= form_for resource, as: resource_name,
+          url: password_path(resource_name), html: {method: :put} do |f| %>
+          <%= devise_error_messages! %>
+          <%= f.hidden_field :reset_password_token %>
+          <div class="field address">
+            <%= f.label :password, t(".lb_new_pass") %>
+            <% if @minimum_password_length %>
+              <em>
+                <%= t ".msg_length_min", number: @minimum_password_length %>
+              </em>
+            <% end %>
+            <%= f.password_field :password, autofocus: true,
+              autocomplete: "off", class: "form-control" %>
+          </div>
+          <div class="field address">
+            <%= f.label :password_confirmation, t(".lb_pass_conf") %>
+            <%= f.password_field :password_confirmation, autocomplete: "off",
+              class: "form-control" %>
+          </div>
+          <div class="actions form-group">
+            <%= f.submit t(".btn_submit"),
+              class: "btn btn-flat btn-warning form-control" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, t(".lb_pass_conf") %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t(".btn_submit") %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
