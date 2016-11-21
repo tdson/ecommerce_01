@@ -1,9 +1,9 @@
 <%= render "shared/error_messages", object: f.object %>
 <%= f.label t "categories.admin.new.parent_category" %>
 <div>
-  <%= f.select :parent_id, options_for_select(nested_set_options(Category) {|i|
-    "#{"&emsp;&emsp;" * i.level} #{i.name.titleize}".html_safe}),
-    include_blank: true, class: "form-control" %>
+  <%= f.select :parent_id, options_for_select(nested_set_options(Category) do
+    |i| "#{"&emsp;&emsp;" * i.level} #{i.name.titleize}".html_safe
+  end, f.object.parent_id), {include_blank: true}, {class: "form-control"} %>
 <small><%= t "categories.admin.new.no_parent"%></small>
 </div>
 <%= f.label t "products.admin.index.name" %>

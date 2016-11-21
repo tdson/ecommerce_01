@@ -1,8 +1,8 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < AdminController
   include TheSortableTreeController::Rebuild
   include TheSortableTreeController::ExpandNode
-  layout "admin_application"
   before_action :load_category, only: [:destroy, :edit, :update]
+
   def index
     @categories = Category.nested_set_scope.select('id, name, description, parent_id')
   end

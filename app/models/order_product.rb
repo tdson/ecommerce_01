@@ -8,6 +8,7 @@ class OrderProduct < ApplicationRecord
   validate :valid_quantity
 
   after_create :update_product_quantity
+  after_update :update_product
 
   default_scope {where deleted_at: nil}
 
@@ -34,5 +35,10 @@ class OrderProduct < ApplicationRecord
       errors.add :quantity, I18n.t("validation.product.not_enough",
         qty: self.product.quantity)
     end
+  end
+
+  def update_product
+    amount = self.quantity_was - self.quantity
+    self.product.update_quantity amount
   end
 end

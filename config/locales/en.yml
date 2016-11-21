@@ -33,6 +33,7 @@ en:
         confirm_delete: "Are you sure ?"
         not_found: "Category not found !"
         products: "Categories"
+        header: "Category mangement"
       new:
         create_success: "Create category successfully !"
         create_fail: "Cant create this category !"
@@ -44,7 +45,7 @@ en:
         update_success: "Update category successfully !"
         update_fail: "Cant update this category !"
         bt_update: "Update"
-        edit_product: "Edit Category"
+        edit_category: "Edit Category"
   layouts:
     application:
       base_title: "FraMarket"
@@ -161,6 +162,7 @@ en:
         download_excel: "Excel"
         download: "Export:"
         xls: "xls"
+        header: "Product List"
       new:
         create_success: "Create product successfully !"
         create_fail: "Cant create this product !"

@@ -1,5 +1,14 @@
-<div class="container">
-  <div class="row">
-      <%= render "list_category" %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t "categories.admin.index.header" %></h3>
+      </div>
+      <div class="box-body chart-responsive">
+        <div class="chart line-chart">
+          <%= render "list_category" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

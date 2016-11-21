@@ -1,5 +1,4 @@
-class Admin::ProductsController < ApplicationController
-  layout "admin_application"
+class Admin::ProductsController < AdminController
   before_action :load_product, only: [:destroy, :edit, :update]
 
   def index
