@@ -233,7 +233,7 @@ en:
     order_products:
       total: "Total:"
 
-  model_mailer:
+  user_mailer:
     new_order_created:
       subject: "Order Bill"
       header: "FraMarket.com"

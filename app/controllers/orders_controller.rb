@@ -22,12 +22,13 @@ class OrdersController < ApplicationController
     @order = current_user.orders.create order_params
     if @order.save
       session[:cart] = nil
-      cw_message = t ".cw_msg", user: current_user.name, url: order_url(@order)
+      cw_message = t ".cw_msg", user: current_user.name,
+        url: edit_admin_order_url(@order)
       send_chatwork_message cw_message
       order_full = Order.includes(:user, order_products: :product)
         .find_by_id @order.id
       if order_full
-        ModelMailer.new_order_created(order_full).deliver
+        UserMailer.new_order_created(order_full).deliver
       else
         flash[:warning] = t ".warning"
       end

@@ -21,7 +21,7 @@ class Admin::OrdersController < AdminController
       if @order.is_accepted? &&
         (order_full = Order.includes(:user, order_products: :product)
           .find_by_id @order.id)
-        ModelMailer.order_accepted(order_full).deliver
+        UserMailer.order_accepted(order_full).deliver
       end
     else
       error_mgs = @order.errors
