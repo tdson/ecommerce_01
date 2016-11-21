@@ -1,0 +1,37 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <%= form_tag admin_users_path, method: :get, id: "admin_search" do %>
+    <%= render "admin/shared/search_form" %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".header" %></h3>
+      </div>
+      <div class="box-body chart-responsive">
+        <div class="chart line-chart">
+          <table class="table table-hover table-suggestion">
+            <thead>
+              <th><%= t ".id" %></th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".email" %></th>
+              <th><%= t ".role" %></th>
+              <th><%= t ".time" %></th>
+              <th><%= t ".options" %></th>
+            </thead>
+            <% if @users.any? %>
+              <tbody id="search-result">
+                <%= render @users %>
+              </tbody>
+            <% end %>
+          </table>
+          <div class="text-center">
+            <%= paginate @users, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

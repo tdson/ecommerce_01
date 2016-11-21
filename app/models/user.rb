@@ -18,6 +18,11 @@ class User < ApplicationRecord
   validates :phone_number, length: {maximum: 15}
   validates :chatwork_id, length: {maximum: 128}
 
+  scope :order_by_name, ->{order :name}
+  scope :search_name_or_email, ->q do
+    where "name LIKE '%#{q}%' OR email LIKE '%#{q}%'" if q.present?
+  end
+
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -30,5 +35,13 @@ class User < ApplicationRecord
         user.confirmed_at = Time.now
       end
     end
+  end
+
+  def is_user? user
+    user.id == self.id
+  end
+
+  def is_admin_or_mod?
+    self.role == Settings.roles[:admin] || self.role == Settings.roles[:mod]
   end
 end

@@ -6,6 +6,16 @@
         <ul>
           <% if user_signed_in? %>
             <li>
+              <%= link_to t(".greeting_txt", name: current_user.name),
+                user_orders_path(current_user) %>
+            </li>
+            <% if current_user.is_admin_or_mod? %>
+              <li>
+                <%= link_to t(".dashboard"),
+                  admin_root_path %>
+              </li>
+            <% end %>
+            <li>
               <%= link_to t(".sign_out"), destroy_user_session_path,
                 method: :delete %>
             </li>
@@ -23,9 +33,11 @@
   <div class="container">
     <div class="header">
       <div class="head-t">
-        <div class="logo">
-          <%= link_to image_tag("project2_logo.png", alt: t(".logo_alt")) %>
-        </div>
+        <%= link_to root_path do %>
+          <div class="logo">
+            <%= image_tag "project2_logo.png", alt: t(".logo_alt") %>
+          </div>
+        <% end %>
         <div class="header_right">
           <div class="cart box_1" id="cart-icon">
             <%= render "layouts/cart" %>
@@ -35,7 +47,7 @@
       </div>
       <ul class="megamenu skyblue">
         <li class="active grid">
-          <%= link_to t(".link_home"), "#", class: "color1" %>
+          <%= link_to t(".link_home"), root_path, class: "color1" %>
         </li>
         <li class="grid">
           <%= link_to "", "#", class: "color2" %>

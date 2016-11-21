@@ -22,17 +22,17 @@
         <% end %>
         <ul class="treeview-menu">
           <li>
-            <%= link_to "#" do %>
+            <%= link_to (admin_orders_path status: 0) do %>
               <i class="fa fa-circle-o"></i><%= t ".item_pending" %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to (admin_orders_path status: 1) do %>
               <i class="fa fa-circle-o"></i><%= t ".item_done" %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to (admin_orders_path status: 2) do %>
               <i class="fa fa-circle-o"></i><%= t ".item_cancel" %>
             <% end %>
           </li>
@@ -66,18 +66,18 @@
         <% end %>
       </li>
       <li>
-        <%= link_to "#" do %>
+        <%= link_to admin_statistics_path do %>
           <i class="fa fa-bar-chart-o"></i>
           <span><%= t ".nav_statistics" %></span>
         <% end %>
       </li>
       <li>
-        <%= link_to "#" do %>
+        <%= link_to admin_users_path do %>
           <i class="fa fa-users"></i> <span><%= t ".nav_users" %></span>
         <% end %>
       </li>
       <li>
-        <%= link_to "#" do %>
+        <%= link_to admin_suggestions_path do %>
           <i class="fa fa-book"></i> <span><%= t ".nav_requests" %></span>
         <% end %>
       </li>

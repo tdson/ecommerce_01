@@ -7,8 +7,8 @@
     <p>
       <%= link_to product_path(product), class: "item_add" do %>
         <i class="glyphicon glyphicon-shopping-cart"></i>
-        <span class=" item_price valsa">
-          <%= t "products.list_products.dollar" %><%= product.price %>
+        <span class="item_price valsa">
+          <%= number_to_currency product.price, unit: t("currency") %>
         </span>
       <% end %>
     </p>

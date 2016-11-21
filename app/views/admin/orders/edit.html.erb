@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= t ".header", id: @order.id %></h3>
+        <span class="label
+          label-<%= Settings.order_status_classes[@order.status] %>">
+          <%= @order.status %>
+        </span>
+      </div>
+      <div class="box-body chart-responsive">
+        <% if @order.is_pending? %>
+          <div class="col-md-12">
+            <%= link_to order_path(@order), method: :patch,
+              class: "btn btn-warning btn-sm btn-flat btn-trash",
+              data: {confirm: t("admin.delete_confirmation")} do %>
+              <i class="fa fa-times-circle"></i>
+              <%= t(".btn_cancel") %>
+            <% end %>
+          </div>
+        <% end %>
+        <%= form_for [:admin, @order] do |f| %>
+          <div class="col-md-8">
+            <table class="table table-hover" id="cart-table">
+              <thead>
+                <th><%= t ".lb_product" %></th>
+                <th><%= t ".lb_qty" %></th>
+                <th><%= t ".lb_price" %></th>
+                <th><%= t ".options" %></th>
+              </thead>
+              <tbody>
+                <% if @order.order_products.any? %>
+                  <%= render "items", f: f %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <div class="order_info">
+              <div class="row">
+                <%= render "shared/error_messages", object: @order %>
+                <div class="form-group">
+                  <%= f.label :full_name, t(".lb_full_name") %>
+                  <%= f.text_field :full_name,
+                    {class: "form-control", required: true} %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :phone, t(".lb_phone") %>
+                  <%= f.text_field :phone,
+                    {class: "form-control", required: true} %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :shipping_address, t(".lb_address") %>
+                  <%= f.text_area :shipping_address,
+                    {class: "form-control", required: true} %>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="sumany">
+              <div class="row">
+                <span class="lb-total"><%= t ".total" %></span>
+                <span class="pull-right">
+                  <span class="lb-cost" id="total_cost">
+                    <%= number_to_currency @order.total_cost,
+                      unit: t("currency") %>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <%= f.hidden_field :status, value: Settings.order_status[:done] %>
+              <% if @order.is_pending? %>
+                <%= f.button class: "btn btn-primary btn-proceed btn-flat",
+                  data: {confirm: t("admin.delete_confirmation")} do %>
+                  <i class="fa fa-check"></i>
+                  <%= t ".btn_proceed" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

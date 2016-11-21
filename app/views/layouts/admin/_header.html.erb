@@ -1,5 +1,5 @@
 <header class="main-header">
-  <%= link_to root_url, class: "logo" do %>
+  <%= link_to admin_root_url, class: "logo" do %>
     <span class="logo-mini"><%= t ".logo_sm" %></span>
     <span class="logo-lg"><%= t ".logo_lg" %></span>
   <% end %>
@@ -13,6 +13,9 @@
     <% end %>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
+        <li>
+          <%= link_to t(".home"), root_path %>
+        </li>
         <li>
           <%= link_to t(".link_sign_out"),
             destroy_user_session_path, method: :delete %>

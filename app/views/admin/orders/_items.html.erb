@@ -1,0 +1,35 @@
+<%= f.fields_for :order_products, @order.order_products do |f_product| %>
+  <tr>
+    <td>
+      <%= link_to product_path(f_product.object.product.id) do %>
+        <%= image_tag f_product.object.product.image,
+          alt: f_product.object.product.name, class: "product-thumbnail" %>
+        <%= f_product.object.product.name %>
+      <% end %>
+    </td>
+    <td>
+      <%= f_product.hidden_field :id, value: f_product.object.id %>
+      <%= f_product.number_field :quantity,
+        {class: "form-control quantity-f", min: 1} %>
+        <% if f.object.is_pending? %>
+          <b class="link-update", id="link-update-<%= f_product.object.id %>">
+            <%= t(".btn_update") %>
+          </b>
+        <% end %>
+      <i></i>
+    </td>
+    <td>
+      <%= number_to_currency f_product.object.current_price,
+        unit: t("currency") %>
+    </td>
+    <td>
+      <% if f.object.is_pending? %>
+        <%= link_to admin_order_product_path(f_product.object.id), method: :delete,
+          data: {confirm: t("admin.delete_confirmation")} do %>
+          <i class="fa fa-trash"></i>
+          <%= t "carts.index.link_rm" %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,18 @@
+<tr>
+  <td><%= user.id %></td>
+  <td>
+    <strong>
+      <%= link_to user.name, "#" %>
+    </strong>
+  </td>
+  <td><%= user.email %></td>
+  <td><%= user.role.titleize %></td>
+  <td><%= l user.created_at, format: :date_time %></td>
+  <td class="text-center">
+    <%= link_to admin_user_path(user.id),
+      method: :delete, class: "btn btn-danger btn-xs btn-option",
+      data: {confirm: t("admin.delete_confirmation")} do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>
