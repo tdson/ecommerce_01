@@ -1,10 +1,18 @@
-<%= t ".rating", count: @rating.count_rating %>
+<%= t ".rating", count: @rating.try(:count_rating) || Settings.zero %>
 <fieldset class="rating">
   <% 5.downto(1).each do |n| %>
-    <%= radio_button_tag :rating, n,
-      (n == @rating.value_rating.round) ? true : false, id: "star#{n}",
-      class: "rating-stars" %>
-    <%= label_tag "star#{n}", "", class: "full" %>
+    <% unless @rating.try(:value_rating) && @rating.try(:count_rating) %>
+      <%= radio_button_tag :rating, n, false,
+        id: "star#{n}", class: "rating-stars" %>
+      <%= label_tag "star#{n}", "", class: "full" %>
+    <% else %>
+      <%= radio_button_tag :rating, n,
+        (n == @rating.value_rating.round) ? true : false,
+        id: "star#{n}", class: "rating-stars" %>
+      <%= label_tag "star#{n}", "", class: "full" %>
+    <% end %>
   <% end %>
 </fieldset>
-<span class="text-danger"><%= @rating.value_rating %></span>
+<span class="text-danger">
+  <%= @rating.try(:value_rating) || Settings.zero%>
+</span>

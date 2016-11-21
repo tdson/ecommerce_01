@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   scope :recent, ->{order created_at: :DESC}
   scope :top_product_within, ->(range, limit) do
     joins(:order_products)
-      .select("products.name, COUNT(order_products.product_id) AS quantity")
+      .select("products.name, SUM(order_products.quantity) AS quantity")
       .where("order_products.created_at >=
         '#{Settings.date_range[range].days.ago}'")
       .group("products.name")

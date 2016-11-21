@@ -21,8 +21,5 @@ class ProductsController < ApplicationController
 
   def load_product_rating
     @rating = Rating.average_of @product.id
-    if @rating.try(:count_rating) == Settings.zero
-      @rating = ViewRating.new
-    end
   end
 end
