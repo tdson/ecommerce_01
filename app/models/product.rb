@@ -13,10 +13,10 @@ class Product < ApplicationRecord
   scope :alphabet, ->{order :name}
   mount_uploader :image, ProductImageUploader
 
-  scope :search_product_or_category, ->(q) do
+  scope :search_product_or_category, ->(search) do
     joins(:category)
       .where "products.name LIKE :query OR categories.name LIKE :query",
-        query: "%#{search}%" if q.present?
+        query: "%#{search}%" if search.present?
   end
 
   scope :of_category, ->category_id do
