@@ -1,34 +1,36 @@
 <% provide :title, t(".title") %>
-<div class="row">
-  <%= form_tag admin_suggestions_path, method: :get, id: "admin_search" do %>
-    <%= render "admin/shared/search_form" %>
-  <% end %>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="box box-info">
-      <div class="box-header with-border">
-        <h3 class="box-title"><%= t ".header" %></h3>
-      </div>
-      <div class="box-body chart-responsive">
-        <div class="chart line-chart">
-          <table class="table table-hover table-suggestion">
-            <thead>
-              <th><%= t ".id" %></th>
-              <th><%= t ".content" %></th>
-              <th><%= t ".user" %></th>
-              <th><%= t ".status" %></th>
-              <th><%= t ".time" %></th>
-              <th><%= t ".options" %></th>
-            </thead>
-            <% if @suggestions.any? %>
-              <tbody id="search-result">
-                <%= render @suggestions %>
-              </tbody>
-            <% end %>
-          </table>
-          <div class="text-center">
-            <%= paginate @suggestions, theme: "twitter-bootstrap-3" %>
+<div class="container">
+  <div class="row">
+    <%= form_tag admin_suggestions_path, method: :get, id: "admin_search" do %>
+      <%= render "admin/shared/search_form" %>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12 product-wrapper">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title"><%= t ".header" %></h3>
+        </div>
+        <div class="box-body chart-responsive">
+          <div class="chart line-chart">
+            <table class="table table-hover table-suggestion">
+              <thead>
+                <th><%= t ".id" %></th>
+                <th><%= t ".content" %></th>
+                <th><%= t ".user" %></th>
+                <th><%= t ".status" %></th>
+                <th><%= t ".time" %></th>
+                <th><%= t ".options" %></th>
+              </thead>
+              <% if @suggestions.any? %>
+                <tbody id="search-result">
+                  <%= render @suggestions %>
+                </tbody>
+              <% end %>
+            </table>
+            <div class="text-center">
+              <%= paginate @suggestions, theme: "twitter-bootstrap-3" %>
+            </div>
           </div>
         </div>
       </div>

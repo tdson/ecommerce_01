@@ -39,7 +39,7 @@
         </ul>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
+        <%= link_to admin_products_path do %>
           <i class="fa fa-product-hunt"></i>
           <span><%= t ".nav_products" %></span>
           <span class="pull-right-container">
@@ -48,22 +48,37 @@
         <% end %>
         <ul class="treeview-menu">
           <li>
-            <%= link_to "#" do %>
+            <%= link_to admin_products_path do %>
               <i class="fa fa-circle-o"></i><%= t ".p_index" %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to new_admin_product_path do %>
               <i class="fa fa-circle-o"></i><%= t ".p_import" %>
             <% end %>
           </li>
         </ul>
       </li>
-      <li>
-        <%= link_to "#" do %>
+      <li class="treeview">
+        <%= link_to admin_categories_path do %>
           <i class="fa fa-inbox"></i>
           <span><%= t ".nav_categories" %></span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
         <% end %>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to admin_categories_path do %>
+              <i class="fa fa-circle-o"></i><%= t ".c_index" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_admin_category_path do %>
+              <i class="fa fa-circle-o"></i><%= t ".c_add" %>
+            <% end %>
+          </li>
+        </ul>
       </li>
       <li>
         <%= link_to admin_statistics_path do %>

@@ -15,11 +15,12 @@ ActiveRecord::Schema.define(version: 20161119113415) do
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "left_node"
-    t.integer  "right_node"
+    t.integer  "lft"
+    t.integer  "rgt"
     t.integer  "depth"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "parent_id"
   end
 
   create_table "order_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="col-lg-6">
+        <h2><b><%= t "products.admin.new.create_product" %></b></h2>
+        <%= form_for [:admin, @product] do |f| %>
+          <%= f.hidden_field :product_id, value: @product.id %>
+          <%= render "product_form", f: f %>
+          <%= f.submit t("products.admin.new.bt_create"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="col-lg-6">
+        <h2><b><%= t "products.admin.new.import" %></b></h2>
+        <small><%= t "products.admin.new.support" %></small>
+        <%= form_for [:admin, @product], multipart: true do |f| %>
+          <%= f.hidden_field :file_id, value: @product.id %>
+          <%= render "import_product_form", f: f %>
+          <%= f.submit t("products.admin.new.bt_upload"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

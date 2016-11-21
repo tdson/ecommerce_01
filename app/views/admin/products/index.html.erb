@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 export-link">
+      <strong>
+        <%= t "products.admin.index.download" %>
+        <span>
+          <%= link_to t("products.admin.index.download_excel"),
+            admin_products_path(format: "xls") %>
+        </span>
+        <span>
+          <%= link_to t("products.admin.index.download_csv"),
+            admin_products_path(format: "csv") %>
+        </span>
+      </strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 product-wrapper">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title"><%= t ".header" %></h3>
+        </div>
+        <div class="box-body chart-responsive">
+          <div class="chart line-chart">
+            <table id="table_list" class="table table-hover">
+              <thead>
+                <tr>
+                  <th class = "text-center">
+                    <%= t "products.admin.index.name" %>
+                  </th>
+                  <th class = "text-center">
+                    <%= t "products.admin.index.image" %>
+                  </th>
+                  <th class = "text-center">
+                    <%= t "products.admin.index.quantity" %>
+                  </th>
+                  <th class = "text-center">
+                    <%= t "products.admin.index.price" %>
+                  </th>
+                  <th class = "text-center">
+                    <%= t "products.admin.index.category" %>
+                  </th>
+                  <th class = "text-center">
+                    <%= t "products.admin.index.activities" %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @products.each do |product| %>
+                  <tr>
+                    <td>
+                      <strong>
+                        <%= link_to product.name.titleize,
+                          product_path(product.id) %>
+                      </strong>
+                    </td>
+                    <td class = "text-center">
+                      <%= image_tag product.image ,class: "product_icon"%>
+                    </td>
+                    <td class = "text-center">
+                      <%= product.quantity %>
+                    </td>
+                    <td class = "text-center">
+                      <%= product.price %>
+                    </td>
+                    <td>
+                      <%= link_to product.category.name.titleize,
+                        products_path(category_id: product.category.id) %>
+                    </td>
+                    <td class = "text-center">
+                      <%= link_to t("products.admin.index.bt_edit"),
+                        edit_admin_product_path(product),
+                        class: "glyphicon glyphicon-edit btn
+                          btn-sm btn-primary" %>
+                      <%= link_to t("products.admin.index.bt_del"),
+                        admin_product_path(product),
+                        method: :delete, remote: true,
+                        data: {confirm:
+                        t("products.admin.index.confirm_delete")},
+                        class: "glyphicon glyphicon-remove btn btn-sm
+                        btn-primary" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <div class="text-center">
+              <%= paginate @products, theme: "twitter-bootstrap-3" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

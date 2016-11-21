@@ -2,7 +2,7 @@ class RecentProducts < CookieCollection
   def initialize cookies
     super cookies
     self.ids = ids.last Settings.recent_products_size
-    ids.each {|product_id| push Product.find(product_id)}
+    ids.each {|product_id| push Product.find_by_id(product_id)}
   end
 
   def push product

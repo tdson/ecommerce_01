@@ -6,6 +6,16 @@ Rails.application.routes.draw do
     resources :order_products, only: [:update, :destroy]
     resources :suggestions, only: [:index, :update, :destroy]
     resources :users, only: [:index, :destroy]
+    resources :products do
+      collection {post :import}
+    end
+    resources :categories do
+      collection do
+        get :manage
+        post :rebuild
+        post :expand_node
+      end
+    end
   end
 
   root "home#index"

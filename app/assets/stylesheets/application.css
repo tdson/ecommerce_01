@@ -11,9 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require dataTables/jquery.dataTables
  *= require_self
  *= require flexslider.css
  *= require admin_lte/ltr/admin_lte
  *= require social-share-button
  *= require bootstrap3-switch
+ *= require sortable_tree
+ *= require nested_options
  */

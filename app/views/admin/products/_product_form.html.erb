@@ -1,0 +1,16 @@
+<%= render "shared/error_messages", object: f.object %>
+<%= f.label t "products.admin.index.category" %>
+<div>
+  <%= f.select :category_id, options_for_select(nested_set_options(Category) {|i|
+    "#{"&emsp;&emsp;" * i.level} #{i.name.titleize}".html_safe}), class: "form-control" %>
+</div>
+<%= f.label t "products.admin.index.name" %>
+<%= f.text_field :name, class: "form-control" %>
+<%= f.label t "products.admin.index.quantity" %>
+<%= f.text_field :quantity, class: "form-control" %>
+<%= f.label t "products.admin.index.price" %>
+<%= f.text_field :price, class: "form-control" %>
+<%= f.label t "products.admin.index.description" %>
+<%= f.text_field :description, class: "form-control" %>
+<%= f.label "products.admin.index.image" %>
+<%= f.file_field :image%>

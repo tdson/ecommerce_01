@@ -35,3 +35,7 @@ user_per_page: 20
 roles: {admin: "admin", mod: "mod", member: "member"}
 top_new_limit: 6
 hot_trend_limit: 6
+time_format: "%d%m%Y"
+type_xls: "text/xls; charset=utf-8; header=present"
+product_filters_rating: {highest_rate: "Highest"}
+product_filters: {price_decrease: "Decrease", price_increase: "Increase" , get_all: "All"}

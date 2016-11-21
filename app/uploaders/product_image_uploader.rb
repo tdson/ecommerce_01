@@ -14,4 +14,12 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+  version :thumb do
+    process :resize_to_fit => [50, 50]
+  end
+
+  version :medium do
+    process :resize_to_fit => [350, 350]
+  end
 end

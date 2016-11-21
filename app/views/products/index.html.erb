@@ -10,13 +10,71 @@
         </div>
       </div>
       <div class="col-md-4 products-grid-right">
+        <%= form_tag @products_path, method: :get, id: :filter_product do %>
         <div class="w_sidebar">
           <div class="w_nav1">
-            <ul>
-            </ul>
+            <div>
+              <b><%= t "products.list_products.search" %></b>
+            </div>
+            <%= text_field_tag :search, params[:search],
+              placeholder: t("products.list_products.holder"),
+              class: "form-control" %>
           </div>
         </div>
+        <div class="w_sidebar">
+
+          <div class="w_nav1">
+            <div>
+              <b><%= t "products.list_products.category" %></b>
+              <%= hidden_field_tag :category_id, params[:category_id],
+                id: "category_id" %>
+              <%= select_tag [:category_id], options_for_select(
+                nested_set_options(Category){|i| "#{"&emsp;&emsp;" * i.level}
+                #{i.name.titleize}".html_safe}), class: "form-control",
+                include_blank: t("products.list_products.get_all")%>
+            </div>
+          </div>
+        </div>
+        <div class="w_sidebar">
+          <div class="w_nav1">
+            <div>
+              <b><%= t "products.list_products.rating" %></b>
+            </div>
+            <% Settings.product_filters_rating.each do |key, value| %>
+            <span class="filter-item">
+              <%= label_tag key do %>
+              <%= radio_button_tag :condition, value,
+                params[:condition] == value, id: key %>
+              <strong><%= value.titleize %></strong>
+              <% end %>
+            </span>
+            <% end %>
+          </div>
+        </div>
+        <div class="w_sidebar">
+          <div class="w_nav1">
+            <div>
+              <b><%= t "products.list_products.price" %></b>
+            </div>
+            <% Settings.product_filters.each do |key, value| %>
+              <span class="filter-item">
+                <%= label_tag key do %>
+                  <%= radio_button_tag :condition, value,
+                    params[:condition] == value, id: key %>
+                  <strong><%= value.titleize %></strong>
+                <% end %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+        <%= button_tag type: :submit,
+          class: "btn btn-primary btn-flat form-control" do %>
+          <i class="fa fa-search"></i>
+          <%= t "products.list_products.btn_submit" %>
+        <% end %>
       </div>
+      <%end%>
     </div>
   </div>
+</div>
 </div>

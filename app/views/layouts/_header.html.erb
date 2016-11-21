@@ -41,7 +41,7 @@
         <div class="logo search-bar-header">
           <%= form_tag products_path, method: :get do %>
             <div class="input-group input-group-sm">
-              <%= text_field_tag :q, params[:q],
+              <%= text_field_tag :search, params[:search],
                 placeholder: t(".search_holder"), class: "form-control" %>
               <span class="input-group-btn">
                 <%= button_tag class: "btn btn-info btn-flat" do %>
@@ -62,9 +62,14 @@
         <li class="active grid">
           <%= link_to t(".link_home"), root_path, class: "color1" %>
         </li>
-        <li class="grid">
-          <%= link_to "", "#", class: "color2" %>
-          <div class="megapanel"></div>
+        <li class="color2">
+          <%= link_to t(".link_product"), products_path, class: "color2" %>
+        </li>
+        <li class="color2">
+          <%= link_to t(".link_suggestion"), new_suggestion_path, class: "color2" %>
+        </li>
+        <li class="color2">
+          <%= link_to t(".link_about"), "#", class: "color2" %>
         </li>
       </ul>
     </div>

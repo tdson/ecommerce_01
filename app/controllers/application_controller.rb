@@ -29,4 +29,8 @@ class ApplicationController < ActionController::Base
     room_id = Settings.id_chatwork_group
     ChatWork::Message.create room_id: room_id, body: message_body
   end
+
+  def load_category
+    @categories = Category.depth_flow
+  end
 end

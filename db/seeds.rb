@@ -29,6 +29,7 @@ end
     confirmed_at: Time.now
 end
 
+=begin
 # Catagories
 5.times do
   Category.create! name: Faker::Team.sport,
@@ -47,7 +48,6 @@ end
 end
 
 # Orders
-=begin
 10.times do |n|
   order = Order.create! user_id: rand(1..5), status: rand(0..2)
   products = Product.order("RAND()").take(rand(2..5))
