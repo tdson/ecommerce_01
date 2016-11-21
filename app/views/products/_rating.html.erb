@@ -1,0 +1,10 @@
+<%= t ".rating", count: @rating.count_rating %>
+<fieldset class="rating">
+  <% 5.downto(1).each do |n| %>
+    <%= radio_button_tag :rating, n,
+      (n == @rating.value_rating.round) ? true : false, id: "star#{n}",
+      class: "rating-stars" %>
+    <%= label_tag "star#{n}", "", class: "full" %>
+  <% end %>
+</fieldset>
+<span class="text-danger"><%= @rating.value_rating %></span>

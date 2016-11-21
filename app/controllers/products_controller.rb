@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    recent_products.push @product
   end
 
   private
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def load_product_rating
-    @rating = Rating.average_of @product
+    @rating = Rating.average_of @product.id
+    @rating = Settings.no_rating if @rating.count_rating == Settings.zero
   end
 end

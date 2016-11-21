@@ -1,6 +1,9 @@
 <% provide :title, @product.name.titleize %>
 <div class="wrapper">
-  <div class="col-md-8 col-md-offset-4">
+  <div class="col-md-4">
+    <%= render "last_viewed" if last_viewed_product %>
+  </div>
+  <div class="col-md-8">
     <div class="col-sm-12">
       <ul class="breadcrumb">
         <li><%= link_to t("breadcrumb.home"), root_path %></li>
@@ -35,8 +38,10 @@
           </div>
           <div class="status">
             <strong>
-              <%= t ".rating", count: @rating.count %>
-              <span class="text-danger"><%= @rating.value %></span>
+              <div class="rating-stars-inline">
+                <%= render "rating" %>
+              </div>
+              <%= hidden_field_tag :product_id, @product.id %>
             </strong>
           </div>
           <div class="status">

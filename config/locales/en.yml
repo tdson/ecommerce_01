@@ -51,23 +51,6 @@ en:
         nav_statistics: "Statistics"
         nav_users: "Users"
         nav_requests: "Requests"
-  products:
-    load_fails: "Product not found!"
-    out: "Sold out"
-    available: "Avalable"
-    index:
-      link_sign_out: "Sign out"
-    show:
-      price: "Price:"
-      status: "Status:"
-      quantity: "Quantity:"
-      btn_add_cart: "add to cart"
-      btn_share: "Share"
-      rating: "Rating (%{count}):"
-    list_products:
-      details: "Details"
-      all: "All"
-      dollar: "$"
   carts:
     not_enough: "Sorry, there are only %{qty} remaining."
     added: "Successfully added."
@@ -83,8 +66,24 @@ en:
       btn_proceed: "Proceed to checkout"
       title: "(%{qty}) Cart"
       title_empty: "Cart"
-  admin:
-    base_title: "Dashboard ECommerce"
-    role_0: "Admin"
-    role_1: "Mod"
-    role_2: "Member"
+  products:
+    load_fails: "Product not found!"
+    out: "Sold out"
+    available: "Avalable"
+    index:
+      link_sign_out: "Sign out"
+    show:
+      price: "Price:"
+      status: "Status:"
+      quantity: "Quantity:"
+      btn_add_cart: "add to cart"
+      btn_share: "Share"
+    rating:
+      rating: "Rating (%{count}):"
+    list_products:
+      details: "Details"
+      all: "All"
+      dollar: "$"
+    last_viewed:
+      header: "Last viewed"
+      link_all: "View all"
