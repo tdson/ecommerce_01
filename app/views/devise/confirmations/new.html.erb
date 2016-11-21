@@ -1,19 +1,26 @@
-<h2><%= t ".header" %></h2>
-
-<%= form_for resource, as: resource_name, url: confirmation_path(resource_name),
-  html: {method: :post} do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value:
-      (resource.pending_reconfirmation? ? resource.unconfirmed_email :
-      resource.email) %>
+<div class="account registration">
+  <div class="container">
+    <div class="account-bottom">
+      <div class="col-md-6 col-md-offset-3">
+        <h2 class="text-center"><%= t ".header" %></h2>
+        <div class="col-sm-10 col-sm-offset-1">
+          <%= form_for resource, as: resource_name, html: {method: :post},
+            url: confirmation_path(resource_name) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="field address">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, value:
+                (resource.pending_reconfirmation? ? resource.unconfirmed_email :
+                resource.email),
+                class: "form-control" %>
+            </div>
+            <div class="actions form-group">
+              <%= f.submit t(".btn_submit"),
+                class: "btn btn-flat btn-info form-control" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit t(".btn_submit") %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

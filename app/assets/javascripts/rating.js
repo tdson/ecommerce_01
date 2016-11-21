@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $('.status').on('click', '.rating-stars', function() {
     rating_val = $(this).val();
     product_id = $(this).parent().parent().next("input#product_id").val();

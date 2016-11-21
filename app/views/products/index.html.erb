@@ -4,7 +4,9 @@
       <div class="col-md-8 products-grid-left">
         <div class="products-grid-lft">
           <%= render @products %>
-          <%= paginate @products, theme: "twitter-bootstrap-3" %>
+          <div class="text-center">
+            <%= paginate @products, theme: "twitter-bootstrap-3" %>
+          </div>
         </div>
       </div>
       <div class="col-md-4 products-grid-right">

@@ -1,0 +1,33 @@
+<% provide :title, t(".title") %>
+<div class="account">
+  <div class="container">
+    <div class="account-bottom">
+      <div class="col-md-4">
+        <%= render "shared/left_panel" %>
+      </div>
+      <div class="col-md-8 account-left">
+        <div class="orders-section">
+          <div class="account-top heading">
+            <h3><%= t ".header" %></h3>
+          </div>
+          <table class="table table-hover">
+            <thead>
+              <th><%= t ".order" %></th>
+              <th><%= t ".date" %></th>
+              <th><%= t ".status" %></th>
+            </thead>
+            <tbody>
+              <% if @orders.any? %>
+                <%= render @orders %>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

@@ -1,5 +1,12 @@
 en:
+  validation:
+    product:
+      not_enough: "is invalid, there are only %{qty} remaining."
   currency: "$"
+  time:
+    formats:
+      date: "%d-%m-%Y"
+      date_time: "%H:%m:%S %d-%m-%Y"
   breadcrumb:
     home: "Home"
     cart: "Shopping cart"
@@ -10,11 +17,10 @@ en:
       logo_alt: "FraMarket"
       link_home: "Home"
       link_product: "Product"
-      empty_cart: "Empty Cart"
-      items: "Items"
       sign_in: "Sign In"
       sign_up: "Sign Up"
       sign_out: "Sign out"
+      greeting_txt: "Welcome, %{name}"
     cart:
       empty: "Empty"
       items: "item"
@@ -22,10 +28,6 @@ en:
     footer:
       copyright: "2016. Design and Developed by"
       author_name: "Son Tran & Nhat Doan"
-    shared:
-      error_messages:
-        message: "The form contains"
-        error: "error"
     admin:
       base_title: "Dashboard ECommerce"
       role_0: "Admin"
@@ -60,7 +62,6 @@ en:
       lb_qty: "Quantity"
       options: "Options"
       total: "Total:"
-      currency: "VND"
       link_rm: "Remove"
       btn_cancel: "Empty the cart"
       btn_proceed: "Proceed to checkout"
@@ -87,3 +88,163 @@ en:
     last_viewed:
       header: "Last viewed"
       link_all: "View all"
+  orders:
+    empty_cart: "Cart is empty, add product to cart to continue."
+    user_not_found: "User not found!"
+    load_fails: "Order not found!"
+    update:
+      success: "Order has been canceled!"
+      fails: "Sorry, cannot close this order right now!"
+      cannot_cancel: "Sorry, this order has been confirmed."
+      cancel_fails: "Opps... cannot cancel this order right now."
+      cannot_update: "Sorry, cannot update this order!"
+    new:
+      step_1: "Step 1"
+      step_2: "Step 2"
+      step_3: "Step 3"
+      icon_st_1: "1"
+      icon_st_2: "2"
+      icon_st_3: "3"
+      lb_full_name: "Full name"
+      lb_phone: "Phone number"
+      lb_address: "Shipping address"
+      btn_next: "Next"
+      lb_method: "Payment method"
+      method_1: "Pay when receive shipments."
+      method_2: "Payment via Paypal (comming soon)."
+      cfr_msg: "Before submit order, please check the information bellow again."
+      btn_submit: "Check out"
+    create:
+      success: "Your order has been created!"
+      fails: "Opps... something went wrong, cannot create order, try later."
+      cw_msg: "%{user} created a new order:\n%{url}"
+    order:
+      name: "Order #%{id}"
+    index:
+      order: "Order"
+      date: "Date"
+      status: "Status"
+      header: "Order History"
+      title: "Order History"
+      cw_msg: "%{user} created a new order:\n %{url}"
+  model_mailer:
+    new_order_created:
+      subject: "Order Bill"
+      header: "FraMarket.com"
+      greeting: "Dear %{name},"
+      mgs_thank_you: "Thank you for your order. For full details, click the link bellow:"
+      th_product: "Product"
+      th_price: "Unit Price"
+      th_quantity: "Quantity"
+      lb_total: "Total"
+    order_accepted:
+      subject: "Your order has been accepted"
+      header: "FraMarket.com"
+      greeting: "Dear %{name},"
+      mgs_thank_you: "Congatulations! Your order has been accepted:"
+      msg_info: "Follow this link to see full order details."
+      th_product: "Product"
+      th_price: "Unit Price"
+      th_quantity: "Quantity"
+      lb_total: "Total"
+  users:
+    load_fails: "User not found!"
+    update_info:
+      info_sction: "Update Account Information"
+      name: "Full name"
+      gender: "Gender"
+      phone_no: "Phone number"
+      chatwork_id: "Chatwork ID"
+      address: "Address"
+      btn_submit: "Submit"
+      title: "Account Settings"
+    update_settings:
+      settings_section: "Update Account Settings"
+      infor_1: "Verify current password to change email or password."
+      infor_2: "Leave New password blank if you don't want to change."
+      lb_email: "Email"
+      lb_password_old: "Current password"
+      lb_password_new: "New password"
+      lb_password_conf: "Password confirmation"
+      lb_permission: "Permission"
+      lb_is_admin: "Administrator"
+      btn_submit: "Update"
+      title: "Change Email And Password"
+    update:
+      success: "Profile has been updated!"
+      fails: "Update fails, try later!"
+      incorrect_password: "is incorrect!"
+  shared:
+    left_panel:
+      menu: "Menu"
+      order_history: "Order History"
+      account_settings: "Account Settings"
+      send_request: "Request New Product"
+      change_password: "Change email and password"
+      recently_viewed: "Recently Viewed"
+    error_messages:
+      message: "The form contains"
+      error: "error"
+  recently_viewed_products:
+    index:
+      header: "Recently Viewed Products"
+      title: "Recently Viewed"
+  suggestions:
+    new:
+      title: "Request New Product"
+      header: "Request New Product"
+      label: "Please give us some information about product which is going to be requested"
+      btn_submit: "Submit"
+    create:
+      success: "Thank you for your contribution!"
+  admin:
+    delete_confirmation: "Are you sure?"
+    search_holder: "Search..."
+    statistics:
+      range_7_days: "Last 7 days"
+      range_30_days: "Last 30 days"
+      index:
+        stat_orders: "Order chart"
+        stat_product: "Top 10 products"
+    orders:
+      load_fails: "Order not found!"
+      index:
+        header: "Pending orders"
+        th_order_id: "Order ID"
+        th_user: "Owner"
+        th_address: "Address"
+        th_time: "Time"
+        th_status: "Status"
+        th_action: "Action"
+      order:
+        name_prefix: "Order #%{id}"
+      destroy:
+        success: "Order has been deleted!"
+        fails: "Opps... cannot delete this order!"
+      edit:
+        header: "Edit Order#%{id}"
+        btn_cancel: "Cancel Order"
+        lb_product: "Product"
+        lb_price: "Unit Price"
+        lb_qty: "Quantity"
+        options: "Options"
+        total: "Total:"
+        currency: "$"
+        link_rm: "Remove"
+        btn_proceed: "Save & Approve"
+        lb_full_name: "Full name"
+        lb_phone: "Phone number"
+        lb_address: "Shipping address"
+        lb_method: "Payment method"
+      items:
+        btn_update: "check & save"
+      update:
+        success: "Updated successfully."
+        fails: "Opps... cannot approve this order right now."
+    order_products:
+      load_fails: "Item not found!"
+      update:
+        success: "Quantity has been updated!"
+      destroy:
+        success: "Product has been removed!"
+        fails: "Opps... cannot remove this product right now!"

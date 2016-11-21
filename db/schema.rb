@@ -15,11 +15,13 @@ ActiveRecord::Schema.define(version: 20161111125715) do
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "left_node"
-    t.integer  "right_node"
+    t.integer  "lft"
+    t.integer  "rgt"
     t.integer  "depth"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "children_count", default: 0, null: false
+    t.integer  "parent_id",      default: 0, null: false
   end
 
   create_table "order_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -29,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161111125715) do
     t.integer  "current_price"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.datetime "deleted_at"
     t.index ["order_id"], name: "index_order_products_on_order_id", using: :btree
     t.index ["product_id"], name: "index_order_products_on_product_id", using: :btree
   end
@@ -41,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161111125715) do
     t.string   "full_name"
     t.string   "shipping_address"
     t.string   "phone"
+    t.datetime "deleted_at"
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
