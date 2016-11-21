@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root "statistics#index"
+    resources :statistics, only: :index
+    resources :orders, except: [:new, :create]
+    resources :order_products, only: [:update, :destroy]
+    resources :suggestions, only: [:index, :update, :destroy]
+  end
+
   root "products#index"
   resources :products, only: [:show, :index] do
     resources :ratings, only: :create
@@ -7,5 +15,10 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   resources :carts, except: [:show, :edit, :update]
-  resources :orders, only: :new
+  resources :orders, except: [:index, :edit, :destroy]
+  resources :users, only: [:show, :edit, :update] do
+    resources :orders, only: [:index, :show]
+  end
+  resources :recently_viewed_products, only: :index
+  resources :suggestions, only: [:new, :create]
 end

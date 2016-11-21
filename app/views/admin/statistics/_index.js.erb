@@ -1,0 +1,14 @@
+<script>
+  var line_chart_x_label = '<%= t "admin.statistics.index.quantity" %>';
+  var bar_chart_x_label = '<%= t "admin.statistics.index.quantity" %>';
+  var orders_data = [
+    <% @last_7_days_orders.each do |item| %>
+    {date: '<%= item.date %>', quantity: <%= item.quantity %>},
+    <% end %>
+  ];
+  var top_products_data = [
+    <% @top_product.each do |product| %>
+    {product: '<%= product.name %>', quantity: <%= product.quantity %>},
+    <% end %>
+  ];
+</script>

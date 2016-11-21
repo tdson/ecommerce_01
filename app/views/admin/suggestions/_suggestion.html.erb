@@ -1,0 +1,17 @@
+<tr>
+  <td><%= suggestion.id %></td>
+  <td class="width-50"><%= suggestion.content %></td>
+  <td><%= suggestion.user.name %></td>
+  <td>
+    <%= hidden_field_tag :id, suggestion.id %>
+    <%= check_box_tag :is_read, true, suggestion.is_read?, class: "is_read" %>
+  </td>
+  <td><%= l suggestion.created_at, format: :date_time %></td>
+  <td class="text-center">
+    <%= link_to admin_suggestion_path(suggestion.id),
+      method: :delete, class: "btn btn-danger btn-xs btn-option",
+      data: {confirm: t("admin.delete_confirmation")} do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>

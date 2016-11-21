@@ -1,0 +1,19 @@
+<% provide :tittle, t(".title") %>
+<div class="account">
+  <div class="container">
+    <div class="account-bottom">
+      <div class="col-md-4">
+        <%= render "shared/left_panel" %>
+      </div>
+      <div class="col-md-8 account-left">
+        <div class="orders-section">
+          <div class="account-top heading">
+            <h3><%= t ".header" %></h3>
+          </div>
+          <%= render @products %>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

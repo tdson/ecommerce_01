@@ -8,8 +8,22 @@ class Product < ApplicationRecord
   mount_uploader :image, ProductImageUploader
 
   scope :recent, ->{order created_at: :DESC}
+  scope :top_product_within, ->(range, limit) do
+    joins(:order_products)
+      .select("products.name, COUNT(order_products.product_id) AS quantity")
+      .where("order_products.created_at >=
+        '#{Settings.date_range[range].days.ago}'")
+      .group("products.name")
+      .order("quantity desc")
+      .limit limit
+  end
 
   def sold_out?
-    self.quantity <= Settings.sold_out
+    self.quantity < Settings.minimum_quantity
+  end
+
+  def update_quantity amount
+    self.quantity += amount
+    self.save
   end
 end

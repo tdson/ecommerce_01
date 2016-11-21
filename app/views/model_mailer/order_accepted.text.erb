@@ -1,0 +1,6 @@
+<%= t ".header" %>
+
+<%= t ".greeting", name: @order.user.name %>
+<%= t(".mgs_thank_you").html_safe %>
+<%= t(".msg_info").html_safe %>
+<%= order_url @order.id %>
